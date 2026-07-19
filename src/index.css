@@ -1,0 +1,45 @@
+:root {
+  --text: #6b7684;
+  --text-h: #191f28;
+  --bg: #ffffff;
+  --border: #e5e8eb;
+  --accent: #3182f6;
+
+  font-family: 'Toss Product Sans', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  min-height: 100svh;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--bg);
+}

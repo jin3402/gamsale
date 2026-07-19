@@ -1,0 +1,271 @@
+.game-deal-list {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  max-height: 100svh;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scroll-behavior: smooth;
+  touch-action: pan-y;
+}
+
+.game-deal-list__controls {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 4px 20px 12px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.game-deal-list__platforms {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.game-deal-list__platforms::-webkit-scrollbar {
+  display: none;
+}
+
+.game-deal-list__platforms > * {
+  flex-wrap: nowrap !important;
+  white-space: nowrap;
+}
+
+.game-deal-list__sort {
+  width: 100%;
+}
+
+.game-deal-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 4px 16px 8px;
+}
+
+.game-deal-list__empty {
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.game-deal-list__more {
+  padding: 8px 16px 24px;
+}
+
+.game-deal-list__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 64px 20px;
+}
+
+.game-deal-card {
+  position: relative;
+  min-height: 168px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #191f28;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+  /* 카드 자체는 화면 전환 없음 — 하트만 상호작용 */
+  cursor: default;
+  transform: translateZ(0);
+}
+
+.game-deal-card__dim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 32, 0.28) 0%,
+      rgba(15, 23, 32, 0.45) 42%,
+      rgba(15, 23, 32, 0.88) 100%
+    ),
+    linear-gradient(90deg, rgba(15, 23, 32, 0.55) 0%, rgba(15, 23, 32, 0.15) 55%, rgba(15, 23, 32, 0.35) 100%);
+}
+
+.game-deal-card__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 168px;
+  padding: 14px 14px 16px;
+}
+
+.game-deal-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.game-deal-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.game-deal-card__chip {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  backdrop-filter: blur(6px);
+}
+
+.game-deal-card__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.game-deal-card__text {
+  min-width: 0;
+  flex: 1;
+}
+
+.game-deal-card__platform {
+  margin: 0 0 4px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+}
+
+.game-deal-card__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  word-break: keep-all;
+}
+
+.game-deal-card__price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.game-deal-card__price-sale {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.game-deal-card__price-original {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.game-deal-card__ends-at {
+  margin: 0;
+  flex-shrink: 0;
+  max-width: 42%;
+  color: #ffd4d8;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: right;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.game-deal-list__ad-slot {
+  width: 100%;
+}
+
+.banner-ad {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.banner-ad--fallback {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 96px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #f2f4f6 0%, #e8eef7 100%);
+  border: 1px solid #e5e8eb;
+  box-sizing: border-box;
+}
+
+.banner-ad__label {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: #191f28;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.banner-ad__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.banner-ad__title {
+  margin: 0 0 4px;
+  color: #191f28;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.banner-ad__desc {
+  margin: 0;
+  color: #6b7684;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.banner-ad__slot {
+  flex-shrink: 0;
+  color: #b0b8c1;
+  font-size: 11px;
+  font-weight: 600;
+}
