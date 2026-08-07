@@ -30,6 +30,8 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
   scrollbar-width: none;
 }
 
@@ -38,12 +40,11 @@
 }
 
 .game-deal-list__platforms > * {
+  display: flex !important;
   flex-wrap: nowrap !important;
+  width: max-content;
+  min-width: 100%;
   white-space: nowrap;
-}
-
-.game-deal-list__sort {
-  width: 100%;
 }
 
 .game-deal-list__items {
@@ -83,9 +84,14 @@
   background-position: center;
   background-repeat: no-repeat;
   isolation: isolate;
-  /* 카드 자체는 화면 전환 없음 — 하트만 상호작용 */
-  cursor: default;
+  /* 카드를 탭하면 공유하기/스토어에서 보기 액션시트가 열려요. 하트는 별도 상호작용이에요. */
+  cursor: pointer;
   transform: translateZ(0);
+  transition: transform 0.12s ease;
+}
+
+.game-deal-card:active {
+  transform: translateZ(0) scale(0.98);
 }
 
 .game-deal-card__dim {
@@ -126,20 +132,6 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-}
-
-.game-deal-card__chip {
-  display: inline-flex;
-  align-items: center;
-  height: 22px;
-  padding: 0 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1;
-  backdrop-filter: blur(6px);
 }
 
 .game-deal-card__bottom {
@@ -217,55 +209,142 @@
   overflow: hidden;
 }
 
-.banner-ad--fallback {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 96px;
-  padding: 14px 16px;
-  background: linear-gradient(135deg, #f2f4f6 0%, #e8eef7 100%);
-  border: 1px solid #e5e8eb;
-  box-sizing: border-box;
-}
-
-.banner-ad__label {
-  flex-shrink: 0;
+.wishlist-entry {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 22px;
-  padding: 0 8px;
-  border-radius: 6px;
-  background: #191f28;
+}
+
+.wishlist-entry__badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #f04452;
   color: #ffffff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-}
-
-.banner-ad__body {
-  flex: 1;
-  min-width: 0;
-}
-
-.banner-ad__title {
-  margin: 0 0 4px;
-  color: #191f28;
-  font-size: 15px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: -0.2px;
+  line-height: 16px;
+  text-align: center;
+  pointer-events: none;
 }
 
-.banner-ad__desc {
+.wishlist-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.wishlist-panel__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.wishlist-panel__sheet {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  max-height: min(88svh, 720px);
+  overflow: auto;
+  border-radius: 24px 24px 0 0;
+  background: var(--bg, #ffffff);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.18);
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+}
+
+.wishlist-panel__list {
+  padding: 0 8px;
+}
+
+.wishlist-panel__empty {
   margin: 0;
-  color: #6b7684;
-  font-size: 12px;
-  line-height: 1.4;
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--text, #4e5968);
+  font-size: 15px;
 }
 
-.banner-ad__slot {
-  flex-shrink: 0;
-  color: #b0b8c1;
-  font-size: 11px;
+.wishlist-panel__status {
+  margin: 0;
+  padding: 0 20px 8px;
+  color: #3182f6;
+  font-size: 13px;
   font-weight: 600;
+}
+
+.wishlist-panel__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 16px 0;
+}
+
+.deal-action-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.deal-action-sheet__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.deal-action-sheet__sheet {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  border-radius: 24px 24px 0 0;
+  background: var(--bg, #ffffff);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.18);
+  padding: 8px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+}
+
+.deal-action-sheet__handle {
+  width: 36px;
+  height: 4px;
+  margin: 0 auto 16px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.deal-action-sheet__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.deal-action-sheet__title {
+  margin: 0;
+  color: var(--text-strong, #191f28);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.deal-action-sheet__platform {
+  margin: 0;
+  color: var(--text, #4e5968);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.deal-action-sheet__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

@@ -15,6 +15,9 @@ dist-ssr
 .env.local
 .env.*.local
 
+# Apps in Toss build artifact (대용량 바이너리)
+*.ait
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

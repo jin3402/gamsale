@@ -5,8 +5,6 @@ export type Platform =
   | 'Xbox'
   | 'Epic Games'
 
-export type SortOption = 'historicalLow' | 'discount'
-
 export interface GameDeal {
   id: string
   title: string
@@ -17,8 +15,6 @@ export interface GameDeal {
   originalPrice: number
   salePrice: number
   discountRate: number
-  /** CheapShark API로 확인된 역대 최저가 여부 (Steam·Epic만) */
-  isHistoricalLow: boolean
-  /** 스토어 링크 — 화면 전환 없이 리스트만 보여주므로 UI에서는 사용하지 않아요. */
+  /** 플랫폼 스토어 링크(상품 페이지 또는 검색). 위시리스트 공유에 사용해요. */
   dealUrl?: string
 }

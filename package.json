@@ -1,13 +1,15 @@
 {
   "name": "game-deal-alert",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.3",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "ait build",
+    "dev": "node ./node_modules/vite/bin/vite.js",
+    "snapshot:deals": "node ./scripts/generate-deal-snapshots.mjs",
+    "prebuild": "node ./scripts/generate-deal-snapshots.mjs",
+    "build": "node ./node_modules/@apps-in-toss/web-framework/ait.js build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "node ./node_modules/vite/bin/vite.js preview"
   },
   "dependencies": {
     "react": "^18.2.0",

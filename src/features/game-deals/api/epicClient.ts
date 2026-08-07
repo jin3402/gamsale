@@ -1,6 +1,6 @@
-import type { SortOption } from '../types'
 import {
   CHEAPSHARK_PAGE_SIZE,
+  CHEAPSHARK_PAGES,
   DEAL_LIMIT,
   EPIC_STORE_ID,
   MIN_DISCOUNT_PERCENT,
@@ -10,16 +10,23 @@ import {
 import type { CheapSharkDeal } from './cheapSharkTypes'
 import { cheapSharkJson } from './cheapSharkRequest'
 
-async function fetchEpicDealPage(): Promise<CheapSharkDeal[]> {
+async function fetchEpicDealPage(pageNumber: number): Promise<CheapSharkDeal[]> {
   const params = new URLSearchParams({
     storeID: EPIC_STORE_ID,
     pageSize: String(CHEAPSHARK_PAGE_SIZE),
-    pageNumber: '0',
+    pageNumber: String(pageNumber),
     onSale: '1',
     sortBy: 'Reviews',
   })
 
   return cheapSharkJson<CheapSharkDeal[]>(`/deals?${params.toString()}`)
+}
+
+async function fetchEpicDealPages(): Promise<CheapSharkDeal[]> {
+  const pages = await Promise.all(
+    Array.from({ length: CHEAPSHARK_PAGES }, (_, index) => fetchEpicDealPage(index)),
+  )
+  return pages.flat()
 }
 
 function isPaidHighDiscount(deal: CheapSharkDeal, reviewFloor: number, discountFloor: number) {
@@ -53,26 +60,31 @@ function dedupeByTitle(deals: CheapSharkDeal[]) {
   return unique
 }
 
-function rankDeals(deals: CheapSharkDeal[], sort: SortOption) {
+function rankByDiscount(deals: CheapSharkDeal[]) {
   return [...deals].sort((a, b) => {
     const savingsDiff = Number(b.savings) - Number(a.savings)
-    const reviewDiff = Number(b.steamRatingCount ?? 0) - Number(a.steamRatingCount ?? 0)
-
-    if (sort === 'historicalLow') {
-      const ratingDiff = Number(b.dealRating ?? 0) - Number(a.dealRating ?? 0)
-      if (ratingDiff !== 0) return ratingDiff
-      if (savingsDiff !== 0) return savingsDiff
-      return reviewDiff
-    }
-
     if (savingsDiff !== 0) return savingsDiff
-    return reviewDiff
+    return Number(b.steamRatingCount ?? 0) - Number(a.steamRatingCount ?? 0)
   })
 }
 
-/** Epic 할인 — CheapShark 요청 1회만 */
-export async function fetchPopularEpicDeals(sort: SortOption): Promise<CheapSharkDeal[]> {
-  const pooled = await fetchEpicDealPage()
+/**
+ * '더보기'로 초기 목록을 다 본 뒤에만 호출돼요. 페이지를 한 장씩 실시간으로 더 가져와요.
+ */
+export async function fetchMoreEpicDeals(
+  pageNumber: number,
+  excludeTitles: ReadonlySet<string>,
+): Promise<CheapSharkDeal[]> {
+  const raw = await fetchEpicDealPage(pageNumber)
+  const filtered = raw.filter(
+    (deal) => isPaidHighDiscount(deal, 200, 10) && !excludeTitles.has(deal.title.trim().toLowerCase()),
+  )
+  return rankByDiscount(dedupeByTitle(filtered))
+}
+
+/** Epic 할인 — CheapShark 최대 CHEAPSHARK_PAGES 페이지 */
+export async function fetchPopularEpicDeals(): Promise<CheapSharkDeal[]> {
+  const pooled = await fetchEpicDealPages()
 
   const strict = dedupeByTitle(
     pooled.filter((deal) =>
@@ -80,13 +92,13 @@ export async function fetchPopularEpicDeals(sort: SortOption): Promise<CheapShar
     ),
   )
 
-  let selected = rankDeals(strict, sort).slice(0, DEAL_LIMIT)
+  let selected = rankByDiscount(strict).slice(0, DEAL_LIMIT)
 
   if (selected.length < DEAL_LIMIT) {
     const relaxed = dedupeByTitle(
       pooled.filter((deal) => isPaidHighDiscount(deal, 300, 15)),
     )
-    selected = rankDeals(relaxed, sort).slice(0, DEAL_LIMIT)
+    selected = rankByDiscount(relaxed).slice(0, DEAL_LIMIT)
   }
 
   return selected

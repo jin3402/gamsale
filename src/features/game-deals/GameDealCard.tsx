@@ -6,6 +6,7 @@ interface GameDealCardProps {
   wishlisted: boolean
   endsAtLabel: string | null
   onToggleWishlist: () => void
+  onOpenActions: () => void
 }
 
 function formatPrice(value: number) {
@@ -17,12 +18,22 @@ export default function GameDealCard({
   wishlisted,
   endsAtLabel,
   onToggleWishlist,
+  onOpenActions,
 }: GameDealCardProps) {
   return (
     <article
       className="game-deal-card"
       style={{ backgroundImage: `url(${deal.thumbnailUrl})` }}
-      aria-label={`${deal.title}, ${deal.discountRate}% 할인`}
+      role="button"
+      tabIndex={0}
+      aria-label={`${deal.title}, ${deal.discountRate}% 할인, 공유하기 또는 스토어에서 보기`}
+      onClick={onOpenActions}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          onOpenActions()
+        }
+      }}
     >
       <div className="game-deal-card__dim" aria-hidden />
 
@@ -32,9 +43,6 @@ export default function GameDealCard({
             <Badge size="medium" color="red" variant="fill">
               {`-${deal.discountRate}%`}
             </Badge>
-            {deal.isHistoricalLow ? (
-              <span className="game-deal-card__chip">역대 최저가</span>
-            ) : null}
           </div>
 
           <IconButton
@@ -44,7 +52,10 @@ export default function GameDealCard({
             iconSize={24}
             aria-label={wishlisted ? `${deal.title} 찜 해제` : `${deal.title} 찜하기`}
             aria-pressed={wishlisted}
-            onClick={onToggleWishlist}
+            onClick={(event) => {
+              event.stopPropagation()
+              onToggleWishlist()
+            }}
           />
         </div>
 

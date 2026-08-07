@@ -1,10 +1,12 @@
-import type { GameDeal, SortOption } from '../types'
+import type { GameDeal } from '../types'
 import {
   DEAL_LIMIT,
   MIN_DISCOUNT_PERCENT,
-  PLAYSTATION_BASE_URL,
+  PLAYSTATION_GRAPHQL_BASE_URL,
   PS_ALL_DEALS_CATEGORY_ID,
+  PS_CATEGORY_GRID_HASH,
 } from './config'
+import { canFetchPlayStationLive, getPlayStationSnapshotDeals } from './consoleSnapshots'
 import { discountPercent, parseMoneyAmount, toKrw } from './money'
 
 interface PsMedia {
@@ -16,7 +18,9 @@ interface PsMedia {
 interface PsPrice {
   basePrice?: string
   discountedPrice?: string
+  discountText?: string | null
   endTime?: string | null
+  isFree?: boolean
 }
 
 interface PsProduct {
@@ -25,46 +29,12 @@ interface PsProduct {
   price?: PsPrice
   media?: PsMedia[]
   storeDisplayClassification?: string
+  localizedStoreDisplayClassification?: string
 }
 
-const PAGES_TO_FETCH = [1, 2, 3, 4]
-
-function extractNextData(html: string): unknown {
-  const match = html.match(
-    /<script id="__NEXT_DATA__" type="application\/json">(.*?)<\/script>/,
-  )
-  if (!match?.[1]) {
-    throw new Error('PlayStation 스토어 응답을 해석하지 못했어요.')
-  }
-  return JSON.parse(match[1]) as unknown
-}
-
-function collectProducts(node: unknown, out: PsProduct[]) {
-  if (!node || typeof node !== 'object') return
-
-  if (Array.isArray(node)) {
-    for (const child of node) collectProducts(child, out)
-    return
-  }
-
-  const obj = node as Record<string, unknown>
-  const name = obj.name
-  const price = obj.price
-  const id = obj.id
-
-  if (
-    typeof name === 'string' &&
-    typeof id === 'string' &&
-    price &&
-    typeof price === 'object'
-  ) {
-    out.push(obj as PsProduct)
-  }
-
-  for (const value of Object.values(obj)) {
-    collectProducts(value, out)
-  }
-}
+const PAGE_SIZE = 24
+/** 24 × 7 ≈ 168개 확보 후 DEAL_LIMIT(150)로 자름 */
+const PAGES_TO_FETCH = [0, 1, 2, 3, 4, 5, 6]
 
 function pickThumbnail(media?: PsMedia[]) {
   if (!media?.length) return ''
@@ -73,7 +43,9 @@ function pickThumbnail(media?: PsMedia[]) {
   const preferred =
     images.find((item) => item.role === 'MASTER') ||
     images.find((item) => item.role?.includes('KEY_ART')) ||
+    images.find((item) => item.role === 'GAMEHUB_COVER_ART') ||
     images.find((item) => item.role?.includes('EDITION')) ||
+    images.find((item) => item.role === 'LOGO') ||
     images[0]
 
   return preferred?.url ?? ''
@@ -81,18 +53,24 @@ function pickThumbnail(media?: PsMedia[]) {
 
 function isAddonOrCurrency(name: string, classification?: string) {
   const haystack = `${name} ${classification ?? ''}`
-  return /(Cash Card|Season Pass|Add-On|Avatar|Theme|Currency|Points)/i.test(haystack)
+  return /(Cash Card|Season Pass|Add-On|Avatar|Theme|Currency|Points|Promotion for PlayStation)/i.test(
+    haystack,
+  )
 }
 
 function mapPsProduct(product: PsProduct, usdKrwRate: number): GameDeal | null {
   const title = product.name?.trim()
   const id = product.id
   if (!title || !id) return null
-  if (isAddonOrCurrency(title, product.storeDisplayClassification)) return null
+
+  const classification =
+    product.storeDisplayClassification || product.localizedStoreDisplayClassification
+  if (isAddonOrCurrency(title, classification)) return null
 
   const originalUsd = parseMoneyAmount(product.price?.basePrice)
   const saleUsd = parseMoneyAmount(product.price?.discountedPrice)
-  if (originalUsd == null || saleUsd == null) return null
+  if (originalUsd == null || saleUsd == null || saleUsd <= 0) return null
+  if (product.price?.isFree) return null
 
   const rate = discountPercent(originalUsd, saleUsd)
   if (rate < MIN_DISCOUNT_PERCENT) return null
@@ -114,41 +92,57 @@ function mapPsProduct(product: PsProduct, usdKrwRate: number): GameDeal | null {
     originalPrice: toKrw(originalUsd, usdKrwRate),
     salePrice: toKrw(saleUsd, usdKrwRate),
     discountRate: rate,
-    // PS Store API에는 역대 최저가 이력이 없어 표시하지 않아요.
-    isHistoricalLow: false,
     dealUrl: `https://store.playstation.com/en-us/product/${id}`,
   }
 }
 
-async function fetchPsDealPage(page: number): Promise<PsProduct[]> {
-  const response = await fetch(
-    `${PLAYSTATION_BASE_URL}/en-us/category/${PS_ALL_DEALS_CATEGORY_ID}/${page}`,
-    {
-      headers: {
-        Accept: 'text/html,application/xhtml+xml',
-      },
+async function fetchPsDealPage(offset: number): Promise<PsProduct[]> {
+  const variables = {
+    id: PS_ALL_DEALS_CATEGORY_ID,
+    pageArgs: { size: PAGE_SIZE, offset },
+  }
+  const extensions = {
+    persistedQuery: {
+      version: 1,
+      sha256Hash: PS_CATEGORY_GRID_HASH,
     },
-  )
+  }
+
+  const params = new URLSearchParams({
+    operationName: 'categoryGridRetrieve',
+    variables: JSON.stringify(variables),
+    extensions: JSON.stringify(extensions),
+  })
+
+  const response = await fetch(`${PLAYSTATION_GRAPHQL_BASE_URL}/api/graphql/v1/op?${params}`, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      'x-apollo-operation-name': 'categoryGridRetrieve',
+      'X-PSN-Store-Locale-Override': 'en-US',
+    },
+  })
 
   if (!response.ok) {
     throw new Error(`PlayStation 할인 정보를 불러오지 못했어요. (${response.status})`)
   }
 
-  const html = await response.text()
-  const nextData = extractNextData(html)
-  const products: PsProduct[] = []
-  collectProducts(nextData, products)
-  return products
+  const payload = (await response.json()) as {
+    data?: { categoryGridRetrieve?: { products?: PsProduct[] } }
+    errors?: Array<{ message?: string }>
+  }
+
+  if (payload.errors?.length) {
+    throw new Error(payload.errors[0]?.message || 'PlayStation GraphQL 오류')
+  }
+
+  return payload.data?.categoryGridRetrieve?.products ?? []
 }
 
-/**
- * PlayStation Store(US) All Deals 카테고리에서 실시간 할인을 가져와요.
- */
-export async function fetchPlayStationDeals(
-  sort: SortOption,
-  usdKrwRate: number,
-): Promise<GameDeal[]> {
-  const pages = await Promise.all(PAGES_TO_FETCH.map((page) => fetchPsDealPage(page)))
+async function fetchPlayStationDealsLive(usdKrwRate: number): Promise<GameDeal[]> {
+  const pages = await Promise.all(
+    PAGES_TO_FETCH.map((page) => fetchPsDealPage(page * PAGE_SIZE)),
+  )
   const byId = new Map<string, GameDeal>()
 
   for (const product of pages.flat()) {
@@ -161,14 +155,26 @@ export async function fetchPlayStationDeals(
   }
 
   const deals = [...byId.values()]
-  deals.sort((a, b) => {
-    if (sort === 'historicalLow') {
-      if (a.isHistoricalLow !== b.isHistoricalLow) {
-        return a.isHistoricalLow ? -1 : 1
-      }
-    }
-    return b.discountRate - a.discountRate
-  })
+  deals.sort((a, b) => b.discountRate - a.discountRate)
 
   return deals.slice(0, DEAL_LIMIT)
+}
+
+/**
+ * PlayStation Store All Deals 카테고리에서 할인을 가져와요.
+ * 토스 WebView는 CORS로 GraphQL 직접 호출이 막혀 빌드 스냅샷을 사용해요.
+ */
+export async function fetchPlayStationDeals(usdKrwRate: number): Promise<GameDeal[]> {
+  if (!canFetchPlayStationLive()) {
+    return getPlayStationSnapshotDeals()
+  }
+
+  try {
+    const live = await fetchPlayStationDealsLive(usdKrwRate)
+    if (live.length > 0) return live
+  } catch (error) {
+    console.warn('[playstation] live fetch failed, using snapshot', error)
+  }
+
+  return getPlayStationSnapshotDeals()
 }

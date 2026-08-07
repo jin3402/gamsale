@@ -13,19 +13,4 @@ export interface CheapSharkDeal {
   steamRatingCount?: string | null
   steamRatingPercent?: string | null
   steamRatingText?: string | null
-  dealRating?: string | null
-  metacriticScore?: string | null
-}
-
-/** CheapShark /games?id= 응답 */
-export interface CheapSharkGameDetail {
-  info: {
-    title: string
-    steamAppID: string | null
-    thumb: string
-  }
-  cheapestPriceEver: {
-    price: string
-    date: number
-  }
 }

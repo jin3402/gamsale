@@ -1,28 +1,34 @@
 import {
   CHEAPSHARK_PAGE_SIZE,
+  CHEAPSHARK_PAGES,
+  DEAL_LIMIT,
   MIN_DISCOUNT_PERCENT,
   MIN_STEAM_RATING_PERCENT,
   MIN_STEAM_REVIEW_COUNT,
-  STEAM_DEAL_LIMIT,
   STEAM_STORE_ID,
 } from './config'
 import { cheapSharkJson, GameDealApiError } from './cheapSharkRequest'
 import type { CheapSharkDeal } from './cheapSharkTypes'
-import type { SortOption } from '../types'
 
 export { GameDealApiError }
 
-async function fetchSteamDealPage(): Promise<CheapSharkDeal[]> {
+async function fetchSteamDealPage(pageNumber: number): Promise<CheapSharkDeal[]> {
   const params = new URLSearchParams({
     storeID: STEAM_STORE_ID,
-    // 한 번 호출로 충분히 모으기
     pageSize: String(CHEAPSHARK_PAGE_SIZE),
-    pageNumber: '0',
+    pageNumber: String(pageNumber),
     onSale: '1',
     sortBy: 'Reviews',
   })
 
   return cheapSharkJson<CheapSharkDeal[]>(`/deals?${params.toString()}`)
+}
+
+async function fetchSteamDealPages(): Promise<CheapSharkDeal[]> {
+  const pages = await Promise.all(
+    Array.from({ length: CHEAPSHARK_PAGES }, (_, index) => fetchSteamDealPage(index)),
+  )
+  return pages.flat()
 }
 
 function isPopularHighDiscount(deal: CheapSharkDeal, reviewFloor: number, discountFloor: number) {
@@ -53,29 +59,35 @@ function dedupeBySteamAppId(deals: CheapSharkDeal[]) {
   return unique
 }
 
-function rankPopularDeals(deals: CheapSharkDeal[], sort: SortOption) {
+function rankByDiscount(deals: CheapSharkDeal[]) {
   return [...deals].sort((a, b) => {
     const savingsDiff = Number(b.savings) - Number(a.savings)
-    const reviewDiff = Number(b.steamRatingCount ?? 0) - Number(a.steamRatingCount ?? 0)
-
-    if (sort === 'historicalLow') {
-      // 추가 API 없이 dealRating으로 정렬 (역대 최저가 배지는 붙이지 않음)
-      const ratingDiff = Number(b.dealRating ?? 0) - Number(a.dealRating ?? 0)
-      if (ratingDiff !== 0) return ratingDiff
-      if (savingsDiff !== 0) return savingsDiff
-      return reviewDiff
-    }
-
     if (savingsDiff !== 0) return savingsDiff
-    return reviewDiff
+    return Number(b.steamRatingCount ?? 0) - Number(a.steamRatingCount ?? 0)
   })
 }
 
 /**
- * Steam 인기 할인 — CheapShark 요청 1회만.
+ * '더보기'로 초기 목록(CHEAPSHARK_PAGES 만큼 미리 받아둔 분량)을 다 본 뒤에만 호출돼요.
+ * 페이지를 한 장씩 실시간으로 더 가져와서, 처음부터 전부 미리 연동해두지 않아도 되게 해요.
  */
-export async function fetchPopularSteamDeals(sort: SortOption): Promise<CheapSharkDeal[]> {
-  const pooled = await fetchSteamDealPage()
+export async function fetchMoreSteamDeals(
+  pageNumber: number,
+  excludeTitles: ReadonlySet<string>,
+): Promise<CheapSharkDeal[]> {
+  const raw = await fetchSteamDealPage(pageNumber)
+  const filtered = raw.filter(
+    (deal) =>
+      isPopularHighDiscount(deal, 300, 10) &&
+      !!deal.steamAppID &&
+      !excludeTitles.has(deal.title.trim().toLowerCase()),
+  )
+  return rankByDiscount(dedupeBySteamAppId(filtered))
+}
+
+/** Steam 인기 할인 — CheapShark 최대 CHEAPSHARK_PAGES 페이지. */
+export async function fetchPopularSteamDeals(): Promise<CheapSharkDeal[]> {
+  const pooled = await fetchSteamDealPages()
 
   const strict = dedupeBySteamAppId(
     pooled.filter((deal) =>
@@ -83,23 +95,23 @@ export async function fetchPopularSteamDeals(sort: SortOption): Promise<CheapSha
     ),
   )
 
-  let selected = rankPopularDeals(strict, sort).slice(0, STEAM_DEAL_LIMIT)
+  let selected = rankByDiscount(strict).slice(0, DEAL_LIMIT)
 
-  if (selected.length < STEAM_DEAL_LIMIT) {
+  if (selected.length < DEAL_LIMIT) {
     const relaxed = dedupeBySteamAppId(
       pooled.filter((deal) => isPopularHighDiscount(deal, 500, 15)),
     )
-    selected = rankPopularDeals(relaxed, sort).slice(0, STEAM_DEAL_LIMIT)
+    selected = rankByDiscount(relaxed).slice(0, DEAL_LIMIT)
   }
 
-  if (selected.length < Math.min(10, STEAM_DEAL_LIMIT)) {
+  if (selected.length < Math.min(10, DEAL_LIMIT)) {
     const fallback = dedupeBySteamAppId(
       pooled.filter((deal) => {
         if (deal.isOnSale !== '1' || !deal.steamAppID) return false
         return Number(deal.steamRatingCount ?? 0) >= 200 && Number(deal.savings ?? 0) >= 15
       }),
     )
-    selected = rankPopularDeals(fallback, sort).slice(0, STEAM_DEAL_LIMIT)
+    selected = rankByDiscount(fallback).slice(0, DEAL_LIMIT)
   }
 
   return selected

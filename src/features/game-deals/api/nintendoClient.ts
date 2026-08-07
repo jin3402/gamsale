@@ -1,10 +1,12 @@
-import type { GameDeal, SortOption } from '../types'
+import type { GameDeal } from '../types'
 import {
   DEAL_LIMIT,
   MIN_DISCOUNT_PERCENT,
   NINTENDO_PRICE_BASE_URL,
   NINTENDO_STORE_BASE_URL,
 } from './config'
+import { canFetchNintendoLive, getNintendoSnapshotDeals } from './consoleSnapshots'
+import { filterSafeNintendoDeals, isBlockedNintendoTitle } from './contentFilter'
 import { discountPercent } from './money'
 
 interface ParsedSaleCard {
@@ -62,9 +64,6 @@ const POPULAR_KR_NSUIDS: Array<{ nsuid: string; title: string; popularity: numbe
   { nsuid: '70010000117099', title: 'FINAL FANTASY RESONANCE', popularity: 65 },
 ]
 
-const ADULT_OR_LOW_QUALITY =
-  /(Pleasure|Deeper|Anime (Boys|Girls)|Seven Deadly Sins|Steam Girls|Jigsaw Girls|공포 심리|도시전설|상식 배틀|명화|있을 리 없는)/i
-
 function parseWon(text: string) {
   const digits = text.replace(/[^\d]/g, '')
   const value = Number(digits)
@@ -72,7 +71,7 @@ function parseWon(text: string) {
 }
 
 function isPopularEnough(card: ParsedSaleCard) {
-  if (ADULT_OR_LOW_QUALITY.test(card.title)) return false
+  if (isBlockedNintendoTitle(card.title)) return false
   if (card.popularity >= 60) return true
   // 베스트셀러/인기 목록에 없어도 일정 가격대 이상 할인만 허용
   return card.originalPrice >= 15000 && card.salePrice >= 1000
@@ -163,17 +162,11 @@ function mapCardToDeal(card: ParsedSaleCard, endsAt?: string): GameDeal {
     originalPrice: card.originalPrice,
     salePrice: card.salePrice,
     discountRate: rate,
-    // 한국 닌텐도 API에는 역대 최저가 이력이 없어 표시하지 않아요.
-    isHistoricalLow: false,
     dealUrl: card.dealUrl || `https://store.nintendo.co.kr/${card.nsuid}`,
   }
 }
 
-/**
- * 한국 닌텐도 스토어 할인만 가져와요. (일본 eShop 제외)
- * 인기 타이틀·베스트셀러 위주로 최대 50개.
- */
-export async function fetchNintendoDeals(sort: SortOption): Promise<GameDeal[]> {
+async function fetchNintendoDealsLive(): Promise<GameDeal[]> {
   const [saleHtml, bestHtml] = await Promise.all([
     fetchStoreHtml('/digital/sale'),
     fetchStoreHtml('/digital/best-sellers').catch(() => ''),
@@ -188,8 +181,8 @@ export async function fetchNintendoDeals(sort: SortOption): Promise<GameDeal[]> 
 
   const byId = new Map<string, ParsedSaleCard>()
   for (const card of saleCards) {
+    if (isBlockedNintendoTitle(card.title)) continue
     if (!isPopularEnough(card) && !bestSellerIds.has(card.nsuid)) continue
-    if (ADULT_OR_LOW_QUALITY.test(card.title)) continue
     byId.set(card.nsuid, card)
   }
 
@@ -220,6 +213,7 @@ export async function fetchNintendoDeals(sort: SortOption): Promise<GameDeal[]> 
   }
 
   const deals = [...byId.values()]
+    .filter((card) => !isBlockedNintendoTitle(card.title))
     .filter((card) => isPopularEnough(card) || bestSellerIds.has(card.nsuid))
     .map((card) => {
       const price = priceMap.get(card.nsuid)
@@ -229,15 +223,28 @@ export async function fetchNintendoDeals(sort: SortOption): Promise<GameDeal[]> 
   deals.sort((a, b) => {
     const popA = byId.get(a.id.replace('switch-', ''))?.popularity ?? 0
     const popB = byId.get(b.id.replace('switch-', ''))?.popularity ?? 0
-
-    if (sort === 'historicalLow') {
-      if (a.isHistoricalLow !== b.isHistoricalLow) return a.isHistoricalLow ? -1 : 1
-    }
-
-    // 인기 점수 우선, 그다음 할인율
     if (popB !== popA) return popB - popA
     return b.discountRate - a.discountRate
   })
 
-  return deals.slice(0, DEAL_LIMIT)
+  return filterSafeNintendoDeals(deals).slice(0, DEAL_LIMIT)
+}
+
+/**
+ * 한국 닌텐도 스토어 할인만 가져와요. (일본 eShop 제외)
+ * 토스 WebView는 CORS로 스토어 직접 호출이 막혀 빌드 스냅샷을 사용해요.
+ */
+export async function fetchNintendoDeals(): Promise<GameDeal[]> {
+  if (!canFetchNintendoLive()) {
+    return getNintendoSnapshotDeals()
+  }
+
+  try {
+    const live = await fetchNintendoDealsLive()
+    if (live.length > 0) return live
+  } catch (error) {
+    console.warn('[nintendo] live fetch failed, using snapshot', error)
+  }
+
+  return getNintendoSnapshotDeals()
 }

@@ -1,10 +1,21 @@
-import type { GameDeal, SortOption } from '../types'
-import { DEAL_LIMIT, MIN_DISCOUNT_PERCENT, XBOX_BASE_URL } from './config'
+import type { GameDeal } from '../types'
+import { DEAL_LIMIT, XBOX_BASE_URL } from './config'
+import { canFetchXboxLive, getXboxSnapshotDeals } from './consoleSnapshots'
 import { discountPercent, parseMoneyAmount, toKrw } from './money'
 
 interface XboxImage {
   ImageType?: string
   Url?: string
+}
+
+interface XboxSalePrice {
+  Price?: number
+  BadgeId?: string
+}
+
+interface XboxSkuSummary {
+  MSRP?: number
+  SalePrices?: XboxSalePrice[]
 }
 
 interface XboxProductLike {
@@ -14,8 +25,10 @@ interface XboxProductLike {
   StrikethroughPrice?: string
   RatingsCount?: string | number
   Images?: XboxImage[]
+  SkusSummary?: XboxSkuSummary[]
 }
 
+/** 장르 + 타이틀 검색으로 할인 목록을 넓게 모아요. */
 const SEARCH_QUERIES = [
   'forza',
   'halo',
@@ -37,7 +50,16 @@ const SEARCH_QUERIES = [
   'diablo',
   'call of duty',
   'tomb raider',
+  'action',
+  'rpg',
+  'racing',
+  'horror',
+  'indie',
+  'deal',
+  'sale',
 ]
+
+const XBOX_MIN_DISCOUNT_PERCENT = 10
 
 function parseRatingsCount(value: unknown): number {
   if (typeof value === 'number' && Number.isFinite(value)) return value
@@ -60,10 +82,8 @@ function parseRatingsCount(value: unknown): number {
 function pickThumbnail(images?: XboxImage[]) {
   if (!images?.length) return ''
   const preferred =
-    images.find((image) => image.ImageType === 'SuperHeroArt') ||
-    images.find((image) => image.ImageType === 'Hero') ||
-    images.find((image) => image.ImageType === 'Poster') ||
-    images.find((image) => image.ImageType === 'BoxArt') ||
+    images.find((image) => /poster/i.test(image.ImageType ?? '')) ||
+    images.find((image) => /boxart|hero|superhero/i.test(image.ImageType ?? '')) ||
     images[0]
   return preferred?.Url ?? ''
 }
@@ -88,6 +108,10 @@ function walkForProducts(node: unknown, out: XboxProductLike[], depth = 0) {
   }
 }
 
+/**
+ * Xbox 카드는 Game Pass 때문에 Price=0인 경우가 많아,
+ * SkusSummary의 MSRP / SalePrices로 실제 유료 할인을 읽어요.
+ */
 function resolvePaidPrices(product: XboxProductLike): {
   title: string
   originalUsd: number
@@ -97,19 +121,44 @@ function resolvePaidPrices(product: XboxProductLike): {
   const title = product.Title?.trim()
   if (!productId || !title) return null
 
-  const saleUsd = product.Price
-  const originalUsd = parseMoneyAmount(product.StrikethroughPrice)
+  for (const sku of product.SkusSummary ?? []) {
+    const msrp = sku.MSRP
+    if (typeof msrp !== 'number' || msrp <= 0) continue
 
-  // 무료(0원)·원가 없는 항목은 실시간 할인으로 보지 않아요.
-  if (typeof saleUsd !== 'number' || saleUsd <= 0 || originalUsd == null) {
-    return null
+    let sale: number | null = null
+    for (const salePrice of sku.SalePrices ?? []) {
+      if (
+        typeof salePrice.Price === 'number' &&
+        salePrice.Price > 0 &&
+        (salePrice.BadgeId == null || salePrice.BadgeId === 'default')
+      ) {
+        sale = salePrice.Price
+        break
+      }
+    }
+
+    if (sale == null && typeof product.Price === 'number' && product.Price > 0) {
+      sale = product.Price
+    }
+
+    if (sale != null && sale > 0 && sale < msrp) {
+      return { title, originalUsd: msrp, saleUsd: sale }
+    }
   }
 
-  // 리뷰가 거의 없는 비인기 타이틀은 제외해요.
-  const reviews = parseRatingsCount(product.RatingsCount)
-  if (reviews < 200) return null
+  const saleUsd = product.Price
+  const strike = product.StrikethroughPrice?.replace(/\u200b/g, '').trim()
+  const originalUsd = parseMoneyAmount(strike)
+  if (
+    typeof saleUsd === 'number' &&
+    saleUsd > 0 &&
+    originalUsd != null &&
+    saleUsd < originalUsd
+  ) {
+    return { title, originalUsd, saleUsd }
+  }
 
-  return { title, originalUsd, saleUsd }
+  return null
 }
 
 function mapXboxProduct(
@@ -119,15 +168,14 @@ function mapXboxProduct(
   const productId = product.ProductId
   const priced = resolvePaidPrices(product)
   if (!productId || !priced) return null
+  if (/(Netflix|YouTube|Spotify|Disney|Hulu|Prime Video)/i.test(priced.title)) return null
 
   const { title, originalUsd, saleUsd } = priced
   const rate = discountPercent(originalUsd, saleUsd)
-  if (rate < MIN_DISCOUNT_PERCENT) return null
+  if (rate < XBOX_MIN_DISCOUNT_PERCENT) return null
 
   const thumbnailUrl = pickThumbnail(product.Images)
   if (!thumbnailUrl) return null
-
-  const reviewScore = parseRatingsCount(product.RatingsCount)
 
   return {
     id: `xbox-${productId}`,
@@ -138,10 +186,8 @@ function mapXboxProduct(
     originalPrice: toKrw(originalUsd, usdKrwRate),
     salePrice: toKrw(saleUsd, usdKrwRate),
     discountRate: rate,
-    // Xbox Store API에는 역대 최저가 이력이 없어 표시하지 않아요.
-    isHistoricalLow: false,
     dealUrl: `https://www.xbox.com/en-US/games/store/a/${productId}`,
-    reviewScore,
+    reviewScore: parseRatingsCount(product.RatingsCount),
   }
 }
 
@@ -167,13 +213,7 @@ async function fetchXboxSearch(query: string): Promise<XboxProductLike[]> {
   return products
 }
 
-/**
- * Xbox/Microsoft Store 검색 결과에서 할인 중인 게임을 모아와요.
- */
-export async function fetchXboxDeals(
-  sort: SortOption,
-  usdKrwRate: number,
-): Promise<GameDeal[]> {
+async function fetchXboxDealsLive(usdKrwRate: number): Promise<GameDeal[]> {
   const pages = await Promise.all(
     SEARCH_QUERIES.map(async (query) => {
       try {
@@ -202,14 +242,28 @@ export async function fetchXboxDeals(
 
   const deals = [...byId.values()]
   deals.sort((a, b) => {
-    if (sort === 'historicalLow') {
-      if (a.isHistoricalLow !== b.isHistoricalLow) {
-        return a.isHistoricalLow ? -1 : 1
-      }
-    }
     if (b.discountRate !== a.discountRate) return b.discountRate - a.discountRate
     return b.reviewScore - a.reviewScore
   })
 
   return deals.slice(0, DEAL_LIMIT).map(({ reviewScore: _reviewScore, ...deal }) => deal)
+}
+
+/**
+ * Xbox 할인 목록.
+ * 토스 WebView는 CORS로 Microsoft Store 직접 호출이 막혀 빌드 스냅샷을 사용해요.
+ */
+export async function fetchXboxDeals(usdKrwRate: number): Promise<GameDeal[]> {
+  if (!canFetchXboxLive()) {
+    return getXboxSnapshotDeals()
+  }
+
+  try {
+    const live = await fetchXboxDealsLive(usdKrwRate)
+    if (live.length > 0) return live
+  } catch (error) {
+    console.warn('[xbox] live fetch failed, using snapshot', error)
+  }
+
+  return getXboxSnapshotDeals()
 }

@@ -1,26 +1,25 @@
-import { BottomSheet, Chip, ChipItem, useBottomSheet } from '@toss/tds-mobile'
+import { Chip, ChipItem } from '@toss/tds-mobile'
 import type { Platform } from './types'
 
 export type PlatformFilterValue = '전체' | Platform
 
-/** 상단에 기본 노출하는 칩 (최대 4개) */
-const PRIMARY_PLATFORMS: PlatformFilterValue[] = [
+/** 가로 슬라이드로 모두 노출 — 순서: 스팀 → 에픽 → 엑스박스 → 플스 → 닌텐도 */
+const PLATFORM_OPTIONS: PlatformFilterValue[] = [
   '전체',
   'Steam',
-  'PlayStation',
+  'Epic Games',
   'Xbox',
+  'PlayStation',
+  'Nintendo Switch',
 ]
-
-/** 더보기(...)에서 고르는 나머지 플랫폼 */
-const MORE_PLATFORMS: Platform[] = ['Nintendo Switch', 'Epic Games']
 
 const PLATFORM_LABELS: Record<PlatformFilterValue, string> = {
   전체: '전체',
   Steam: 'Steam',
-  PlayStation: 'PlayStation',
+  'Epic Games': 'Epic',
   Xbox: 'Xbox',
-  'Nintendo Switch': 'Nintendo Switch',
-  'Epic Games': '에픽게임즈(Epic Games)',
+  PlayStation: 'PlayStation',
+  'Nintendo Switch': 'Nintendo',
 }
 
 interface PlatformFilterChipsProps {
@@ -28,58 +27,15 @@ interface PlatformFilterChipsProps {
   onChange: (value: PlatformFilterValue) => void
 }
 
-function isMorePlatform(value: PlatformFilterValue): value is Platform {
-  return MORE_PLATFORMS.includes(value as Platform)
-}
-
 export default function PlatformFilterChips({ value, onChange }: PlatformFilterChipsProps) {
-  const { open, close } = useBottomSheet()
-  const moreSelected = isMorePlatform(value)
-
-  const openMoreSheet = () => {
-    open({
-      onClose: close,
-      header: <BottomSheet.Header>플랫폼 선택</BottomSheet.Header>,
-      headerDescription: (
-        <BottomSheet.HeaderDescription>
-          Nintendo Switch, 에픽게임즈 등 나머지 스토어를 골라주세요
-        </BottomSheet.HeaderDescription>
-      ),
-      children: (
-        <BottomSheet.Select
-          value={moreSelected ? value : undefined}
-          options={MORE_PLATFORMS.map((platform) => ({
-            name: PLATFORM_LABELS[platform],
-            value: platform,
-          }))}
-          onChange={(event) => {
-            onChange(event.target.value as Platform)
-            close()
-          }}
-        />
-      ),
-    })
-  }
-
   return (
     <div className="game-deal-list__platforms">
       <Chip kind="select" size="small" variant="weak" shape="pill" margin="none" wrap={false}>
-        {PRIMARY_PLATFORMS.map((item) => (
-          <ChipItem
-            key={item}
-            selected={value === item}
-            onClick={() => onChange(item)}
-          >
+        {PLATFORM_OPTIONS.map((item) => (
+          <ChipItem key={item} selected={value === item} onClick={() => onChange(item)}>
             {PLATFORM_LABELS[item]}
           </ChipItem>
         ))}
-        <ChipItem
-          selected={moreSelected}
-          onClick={openMoreSheet}
-          aria-label="더보기 플랫폼"
-        >
-          …
-        </ChipItem>
       </Chip>
     </div>
   )

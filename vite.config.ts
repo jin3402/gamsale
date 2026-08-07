@@ -30,13 +30,15 @@ const sharedProxy = {
   },
   '/api/nintendo-store': nintendoStoreProxy,
   '/api/nintendo-price': nintendoPriceProxy,
-  '/api/playstation': {
-    target: 'https://store.playstation.com',
+  '/api/ps-graphql': {
+    target: 'https://web.np.playstation.com',
     changeOrigin: true,
-    rewrite: (path: string) => path.replace(/^\/api\/playstation/, ''),
+    rewrite: (path: string) => path.replace(/^\/api\/ps-graphql/, ''),
     headers: {
+      Origin: 'https://store.playstation.com',
+      Referer: 'https://store.playstation.com/',
       'User-Agent':
-        'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     },
   },
   '/api/xbox': {

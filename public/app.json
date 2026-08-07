@@ -1,6 +1,6 @@
 {
     "deploymentId": "game-deal-alert",
     "name": "game-deal-alert",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "main": "index.html"
 }

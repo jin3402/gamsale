@@ -3,8 +3,6 @@
  * @see https://developers-apps-in-toss.toss.im/bedrock/reference/framework/광고/BannerAd.md
  */
 
-export { LIVE_BANNER_AD_GROUP_ID, TEST_BANNER_AD_GROUP_ID } from './adIds'
-
 export interface TossAdsAttachBannerOptions {
   theme?: 'auto' | 'light' | 'dark'
   tone?: 'blackAndWhite' | 'grey'

@@ -1,7 +1,9 @@
 /**
- * 개발 중에는 Vite 프록시를 쓰고,
- * 빌드·토스 WebView에서는 직접 호출을 시도해요.
- * CORS가 막히면 `.env`의 VITE_USE_*_PROXY=true 와 리버스 프록시가 필요해요.
+ * 개발 중에는 Vite 프록시를 써요.
+ * Nintendo/PlayStation은 토스 WebView CORS 때문에 프로덕션에서 직접 호출이 막혀요.
+ * → 빌드 시 `npm run snapshot:deals` 스냅샷을 번들에 넣고, 런타임은 그걸 사용해요.
+ * CheapShark만 CORS가 열려 직접 호출이 가능해요.
+ * Xbox도 CORS가 막혀 스냅샷을 사용해요.
  */
 const useDevProxy = import.meta.env.DEV
 
@@ -22,15 +24,20 @@ export const NINTENDO_PRICE_BASE_URL =
     ? '/api/nintendo-price'
     : 'https://api.ec.nintendo.com'
 
-export const PLAYSTATION_BASE_URL =
+/** PlayStation Store GraphQL (할인 목록) */
+export const PLAYSTATION_GRAPHQL_BASE_URL =
   useDevProxy || import.meta.env.VITE_USE_PLAYSTATION_PROXY === 'true'
-    ? '/api/playstation'
-    : 'https://store.playstation.com'
+    ? '/api/ps-graphql'
+    : 'https://web.np.playstation.com'
 
 export const XBOX_BASE_URL =
   useDevProxy || import.meta.env.VITE_USE_XBOX_PROXY === 'true'
     ? '/api/xbox'
     : 'https://storeedgefd.dsx.mp.microsoft.com'
+
+/** categoryGridRetrieve persisted query hash (PS Store APQ) */
+export const PS_CATEGORY_GRID_HASH =
+  '9845afc0dbaab4965f6563fffc703f588c8e76792000e8610843b8d3ee9c4c09'
 
 /**
  * 환율 API 실패 시 사용할 폴백 값.
@@ -48,10 +55,16 @@ export const EPIC_STORE_ID = '25'
 export const CHEAPSHARK_PAGE_SIZE = 60
 
 /** 플랫폼별 최대 할인 게임 개수 */
-export const DEAL_LIMIT = 50
+export const DEAL_LIMIT = 150
 
-/** @deprecated DEAL_LIMIT 사용 */
-export const STEAM_DEAL_LIMIT = DEAL_LIMIT
+/**
+ * 할인율 상위 몇 개까지를 "상위 노출 후보 풀"로 볼지.
+ * 이 풀 안에서만 순서를 무작위로 섞어서, 매번 같은 게임만 맨 위에 나오지 않게 해요.
+ */
+export const TOP_DEAL_POOL_SIZE = 30
+
+/** CheapShark에서 가져올 페이지 수 (pageSize 최대 60 → 3페이지 ≈ 180) */
+export const CHEAPSHARK_PAGES = 3
 
 /** 화면에 처음 보여줄 게임 수 / 더보기 단위 */
 export const DEAL_PAGE_SIZE = 10

@@ -1,28 +1,46 @@
-import { useEffect, useState } from 'react'
-import { fetchGameDeals } from './api/fetchGameDeals'
-import type { GameDeal, Platform, SortOption } from './types'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  canLoadMoreDeals,
+  createInitialLoadMoreCursor,
+  fetchGameDeals,
+  fetchMoreGameDeals,
+  type LoadMoreCursor,
+} from './api/fetchGameDeals'
+import type { GameDeal, Platform } from './types'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
-export function useGameDeals(platform: '전체' | Platform, sort: SortOption) {
+function toTitleKey(deal: GameDeal) {
+  return deal.title.trim().toLowerCase()
+}
+
+export function useGameDeals(platform: '전체' | Platform) {
   const [deals, setDeals] = useState<GameDeal[]>([])
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [reloadKey, setReloadKey] = useState(0)
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
+  const [hasMoreRemote, setHasMoreRemote] = useState(false)
+
+  const cursorRef = useRef<LoadMoreCursor>(createInitialLoadMoreCursor())
+  const knownTitlesRef = useRef<Set<string>>(new Set())
 
   useEffect(() => {
-    const controller = new AbortController()
     let cancelled = false
 
     async function load() {
       setStatus('loading')
       setErrorMessage(null)
+      setHasMoreRemote(false)
+      cursorRef.current = createInitialLoadMoreCursor()
 
       try {
-        const next = await fetchGameDeals(platform, sort)
+        const next = await fetchGameDeals(platform)
         if (cancelled) return
+        knownTitlesRef.current = new Set(next.map(toTitleKey))
         setDeals(next)
         setStatus('success')
+        setHasMoreRemote(canLoadMoreDeals(platform, cursorRef.current))
       } catch (error) {
         if (cancelled) return
         const message =
@@ -37,15 +55,44 @@ export function useGameDeals(platform: '전체' | Platform, sort: SortOption) {
 
     return () => {
       cancelled = true
-      controller.abort()
     }
-  }, [platform, sort, reloadKey])
+  }, [platform, reloadKey])
+
+  /**
+   * 미리 전부 연동해두지 않고, 지금까지 보여준 목록을 다 스크롤했을 때만 실시간으로
+   * Steam/Epic의 다음 페이지를 더 가져와요. (콘솔 플랫폼은 CORS 때문에 대상이 아니에요.)
+   */
+  const loadMore = useCallback(async () => {
+    if (isLoadingMore || !canLoadMoreDeals(platform, cursorRef.current)) return
+
+    setIsLoadingMore(true)
+    try {
+      const { deals: more, cursor } = await fetchMoreGameDeals(
+        platform,
+        knownTitlesRef.current,
+        cursorRef.current,
+      )
+      cursorRef.current = cursor
+
+      if (more.length > 0) {
+        for (const deal of more) knownTitlesRef.current.add(toTitleKey(deal))
+        setDeals((prev) => [...prev, ...more])
+      }
+
+      setHasMoreRemote(canLoadMoreDeals(platform, cursor))
+    } finally {
+      setIsLoadingMore(false)
+    }
+  }, [platform, isLoadingMore])
 
   return {
     deals,
     status,
     errorMessage,
     isLoading: status === 'loading' || status === 'idle',
+    isLoadingMore,
+    hasMoreRemote,
+    loadMore,
     reload: () => setReloadKey((key) => key + 1),
   }
 }
