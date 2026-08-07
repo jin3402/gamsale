@@ -5,7 +5,7 @@
 토스 앱인토스(Apps in Toss) 미니앱으로 만든 **멀티 플랫폼 게임 할인 큐레이션 서비스**입니다.  
 Steam, Epic Games, Xbox, PlayStation, Nintendo Switch의 할인 정보를 모아 보여주고, 위시리스트·공유·스토어 이동·광고·프로모션까지 실제 운영 가능한 수준으로 연동했습니다.
 
-**GitHub:** [jin3402](https://github.com/jin3402)  
+**GitHub:** [jin3402/gamsale](https://github.com/jin3402/gamsale)  
 **플랫폼:** Apps in Toss WebView · TDS(Toss Design System)
 
 ---
