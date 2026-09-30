@@ -7,10 +7,8 @@ import {
   MIN_STEAM_REVIEW_COUNT,
   STEAM_STORE_ID,
 } from './config'
-import { cheapSharkJson, GameDealApiError } from './cheapSharkRequest'
+import { cheapSharkJson } from './cheapSharkRequest'
 import type { CheapSharkDeal } from './cheapSharkTypes'
-
-export { GameDealApiError }
 
 async function fetchSteamDealPage(pageNumber: number): Promise<CheapSharkDeal[]> {
   const params = new URLSearchParams({

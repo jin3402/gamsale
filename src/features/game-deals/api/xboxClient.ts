@@ -246,7 +246,7 @@ async function fetchXboxDealsLive(usdKrwRate: number): Promise<GameDeal[]> {
     return b.reviewScore - a.reviewScore
   })
 
-  return deals.slice(0, DEAL_LIMIT).map(({ reviewScore: _reviewScore, ...deal }) => deal)
+  return deals.slice(0, DEAL_LIMIT).map(({ reviewScore, ...deal }) => deal)
 }
 
 /**

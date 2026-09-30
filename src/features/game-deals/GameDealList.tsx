@@ -10,7 +10,8 @@ import { useEntryPromotionReward } from './promotion/usePromotionReward'
 import type { GameDeal } from './types'
 import { useDealPaging } from './useDealPaging'
 import { useGameDeals } from './useGameDeals'
-import { WishlistProvider, useWishlistContext } from './wishlist/WishlistContext'
+import { WishlistProvider } from './wishlist/WishlistContext'
+import { useWishlistContext } from './wishlist/useWishlistContext'
 import WishlistPanel from './wishlist/WishlistPanel'
 
 function formatEndsAt(value?: string) {

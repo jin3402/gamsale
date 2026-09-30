@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { grantPromotionReward } from '@apps-in-toss/web-framework'
 
 /**
@@ -10,7 +10,7 @@ export const TEST_PROMOTION_CODE = 'TEST_01KYXDCDG35QD4EYTZ8R9M2J1B'
 
 /**
  * 콘솔에서 프로모션 검수가 끝난 뒤 발급되는 "운영용" 프로모션 코드예요. (TEST_ 접두사 없는 코드)
- * 콘솔에서 "시작하기"를 누르기 직전, 이 값을 false로 바꾼 뒤 다시 빌드해 주세요.
+ * 콘솔에서 "시작하기"를 누르기 직전, 아래 IS_PROMOTION_TEST_PHASE를 false로 바꾼 뒤 다시 빌드해 주세요.
  */
 export const PRODUCTION_PROMOTION_CODE = '01KYXDCDG35QD4EYTZ8R9M2J1B'
 
@@ -44,6 +44,23 @@ export type GrantPromotionRewardOutcome =
  */
 const inFlightRequests = new Set<string>()
 
+/** 일부 WebView·사생활 보호 모드에서는 localStorage 접근 자체가 예외를 던져요. */
+function readStorage(key: string) {
+  try {
+    return window.localStorage.getItem(key)
+  } catch {
+    return null
+  }
+}
+
+function writeStorage(key: string, value: string) {
+  try {
+    window.localStorage.setItem(key, value)
+  } catch {
+    // 저장에 실패해도 지급 결과에는 영향이 없어요.
+  }
+}
+
 /**
  * 프로모션 포인트를 "기기당 1회만" 지급해요.
  * 앱에 들어오면 한 번 호출하고, 이미 지급한 적이 있으면 다시 호출하지 않아요.
@@ -54,11 +71,7 @@ export async function grantEntryPromotionReward(
 ): Promise<GrantPromotionRewardOutcome> {
   const storageKey = `${STORAGE_KEY_PREFIX}${promotionCode}`
 
-  if (typeof window !== 'undefined' && window.localStorage.getItem(storageKey)) {
-    return { status: 'already-granted' }
-  }
-
-  if (inFlightRequests.has(storageKey)) {
+  if (readStorage(storageKey) || inFlightRequests.has(storageKey)) {
     return { status: 'already-granted' }
   }
 
@@ -77,10 +90,7 @@ export async function grantEntryPromotionReward(
     }
 
     if ('key' in result) {
-      console.log('[프로모션] 포인트 지급 성공:', result.key)
-      if (typeof window !== 'undefined') {
-        window.localStorage.setItem(storageKey, result.key)
-      }
+      writeStorage(storageKey, result.key)
       return { status: 'granted', key: result.key }
     }
 
@@ -92,16 +102,6 @@ export async function grantEntryPromotionReward(
   } finally {
     inFlightRequests.delete(storageKey)
   }
-}
-
-/** 컴포넌트에서 편하게 쓸 수 있는 래퍼 훅이에요. 실제 지급 로직은 `grantEntryPromotionReward`에 있어요. */
-export function usePromotionReward(promotionCode: string = DEFAULT_PROMOTION_CODE, amount = ENTRY_PROMOTION_AMOUNT) {
-  const grantOnce = useCallback(
-    () => grantEntryPromotionReward(promotionCode, amount),
-    [promotionCode, amount],
-  )
-
-  return { grantOnce }
 }
 
 /**
