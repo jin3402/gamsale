@@ -129,8 +129,8 @@ function GameDealListInner() {
                     deal={item.deal}
                     wishlisted={has(item.deal.id)}
                     endsAtLabel={formatEndsAt(item.deal.endsAt)}
-                    onToggleWishlist={() => toggle(item.deal)}
-                    onOpenActions={() => setActionDeal(item.deal)}
+                    onToggleWishlist={toggle}
+                    onOpenActions={setActionDeal}
                   />
                 </div>
               ),

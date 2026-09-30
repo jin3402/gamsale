@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Badge, IconButton } from '@toss/tds-mobile'
 import { formatKrw } from './format'
 import type { GameDeal } from './types'
@@ -6,11 +7,12 @@ interface GameDealCardProps {
   deal: GameDeal
   wishlisted: boolean
   endsAtLabel: string | null
-  onToggleWishlist: () => void
-  onOpenActions: () => void
+  /** 목록 전체에서 같은 함수를 넘길 수 있게 deal을 인자로 받아요. (memo가 깨지지 않도록) */
+  onToggleWishlist: (deal: GameDeal) => void
+  onOpenActions: (deal: GameDeal) => void
 }
 
-export default function GameDealCard({
+function GameDealCard({
   deal,
   wishlisted,
   endsAtLabel,
@@ -24,11 +26,11 @@ export default function GameDealCard({
       role="button"
       tabIndex={0}
       aria-label={`${deal.title}, ${deal.discountRate}% 할인, 공유하기 또는 스토어에서 보기`}
-      onClick={onOpenActions}
+      onClick={() => onOpenActions(deal)}
       onKeyDown={(event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault()
-          onOpenActions()
+          onOpenActions(deal)
         }
       }}
     >
@@ -51,7 +53,7 @@ export default function GameDealCard({
             aria-pressed={wishlisted}
             onClick={(event) => {
               event.stopPropagation()
-              onToggleWishlist()
+              onToggleWishlist(deal)
             }}
           />
         </div>
@@ -76,3 +78,6 @@ export default function GameDealCard({
     </article>
   )
 }
+
+/** 액션시트를 열거나 다른 카드를 찜할 때 나머지 카드는 다시 그리지 않아요. */
+export default memo(GameDealCard)
