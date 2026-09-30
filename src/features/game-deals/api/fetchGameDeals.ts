@@ -1,6 +1,6 @@
 import type { GameDeal, Platform } from '../types'
 import { CHEAPSHARK_PAGES, DEAL_LIMIT, TOP_DEAL_POOL_SIZE } from './config'
-import { fetchMoreSteamDeals, fetchPopularSteamDeals } from './cheapSharkClient'
+import { fetchMoreSteamDeals, fetchPopularSteamDeals } from './steamClient'
 import { fetchMoreEpicDeals, fetchPopularEpicDeals } from './epicClient'
 import { getUsdKrwRate } from './exchangeRate'
 import { mapCheapSharkDeal } from './mapDeal'

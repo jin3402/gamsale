@@ -1,16 +1,13 @@
 import { useState } from 'react'
 import { Button, IconButton, List, ListRow, Top } from '@toss/tds-mobile'
 import { shareWishlist } from './shareWishlist'
-import { useWishlistContext } from './WishlistContext'
+import { useWishlistContext } from './useWishlistContext'
 import { SHARE_ACTION_LABEL } from '../dealActionLabels'
+import { formatKrw } from '../format'
 
 interface WishlistPanelProps {
   open: boolean
   onClose: () => void
-}
-
-function formatPrice(value: number) {
-  return `${value.toLocaleString('ko-KR')}원`
 }
 
 export default function WishlistPanel({ open, onClose }: WishlistPanelProps) {
@@ -25,8 +22,6 @@ export default function WishlistPanel({ open, onClose }: WishlistPanelProps) {
     setBusy(true)
     setStatus(null)
     try {
-      // 공유가 성공하면 shareWishlist 내부(share.ts)에서 "서비스 공유하기" 프로모션을
-      // 기기당 1회로 자동 지급 시도해요. 어떤 공유 경로든 동일하게 처리돼요.
       await shareWishlist(items)
       setStatus('공유 시트를 열었어요.')
     } catch {
@@ -73,7 +68,7 @@ export default function WishlistPanel({ open, onClose }: WishlistPanelProps) {
                   <ListRow.Texts
                     type="2RowTypeA"
                     top={deal.title}
-                    bottom={`${deal.platform} · -${deal.discountRate}% · ${formatPrice(deal.salePrice)}`}
+                    bottom={`${deal.platform} · -${deal.discountRate}% · ${formatKrw(deal.salePrice)}`}
                   />
                 }
                 right={

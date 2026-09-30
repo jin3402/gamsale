@@ -5,6 +5,7 @@
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { decodeHtmlEntities, isBlockedNintendoTitle } from '../src/features/game-deals/api/contentRules.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const outDir = join(__dirname, '../src/features/game-deals/api/snapshots')
@@ -13,17 +14,6 @@ const DEAL_LIMIT = 150
 
 const PS_CATEGORY_ID = '3f772501-f6f8-49b7-abac-874a88ca4897'
 const PS_HASH = '9845afc0dbaab4965f6563fffc703f588c8e76792000e8610843b8d3ee9c4c09'
-
-/** src/features/game-deals/api/contentFilter.ts 와 동일하게 맞춰 주세요. */
-const ADULT_OR_SUGGESTIVE =
-  /(Hentai|Ecchi|Nude|NSFW|R-?18|18\+|Adult|エロ|アダルト|同人|성인|야한|누드|탈의|노출|착의|변태|음란|음행|능욕|조교|착정|사정|중출|촉수|NTR|寝取|人妻|痴漢|痴女|風俗|ソープ|援交|巨乳|貧乳|おっぱい|ヌード|裸|Harem|Succubus|Bikini|Lingerie|Fetish|Oppai|Boob|Pussy|Sex|Slave|Seduction|Temptation|Locker Room|Photo Girls|Good Girls|Steam Girls|Jigsaw Girls|Bad Girls|Puzzle Girls|Pool Party Girls|Splash Babes|Wild Desire|Pleasure|Deeper|Flip-Flip|Anime (Boys|Girls)|Anime Codex|Final Pose|No Retouch|Raw Photo|Cute Girls|Kawaii Anime|Gallery Unlock|갤러리 해금|Babe|Dating Sim|Waifu|Wife|Husband|Nurse|Maid|Seven Deadly Sins|LoveR|Hidden Legends)/i
-const LOW_QUALITY_JUNK =
-  /(공포 심리|위치전설|상식 배틀|명화|있을 리 없는|Quiz|Trivia|Jigsaw|Coloring Book|Wallpaper|Photo Album)/i
-
-function isBlockedNintendoTitle(title) {
-  const normalized = String(title).replace(/&#039;/g, "'").replace(/&amp;/g, '&').trim()
-  return ADULT_OR_SUGGESTIVE.test(normalized) || LOW_QUALITY_JUNK.test(normalized)
-}
 
 function parseWon(text) {
   const value = Number(String(text).replace(/[^\d]/g, ''))
@@ -81,7 +71,7 @@ async function fetchNintendo() {
       const img = card.match(/<img class="product-image-photo"[^>]*src="([^"]+)"/)
       if (!href || !title || !special || !old) continue
 
-      const name = title[1].trim()
+      const name = decodeHtmlEntities(title[1].trim())
       if (isBlockedNintendoTitle(name)) continue
 
       const originalPrice = parseWon(old[1])
@@ -371,15 +361,17 @@ async function main() {
     console.warn('[snapshot] xbox empty — kept previous snapshot')
   }
 
+  // 모든 플랫폼이 이전 스냅샷을 그대로 썼다면 생성 시각도 그대로 둬요.
+  // (새로 받은 데이터가 없는데 시각만 바뀌면 갱신된 것처럼 보여요)
+  const refreshed = nintendoLive.length > 0 || playstationLive.length > 0 || xboxLive.length > 0
   const payload = {
-    generatedAt: new Date().toISOString(),
+    generatedAt: refreshed || !previous?.generatedAt ? new Date().toISOString() : previous.generatedAt,
     nintendo,
     playstation,
     xbox,
   }
 
-  const ts = `/* eslint-disable */
-/** 자동 생성: npm run snapshot:deals — 수동 수정하지 마세요. */
+  const ts = `/** 자동 생성: npm run snapshot:deals — 수동 수정하지 마세요. */
 import type { GameDeal } from '../../types'
 
 export const consoleDealSnapshot: {
