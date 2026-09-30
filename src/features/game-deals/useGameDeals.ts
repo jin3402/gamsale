@@ -6,13 +6,10 @@ import {
   fetchMoreGameDeals,
   type LoadMoreCursor,
 } from './api/fetchGameDeals'
+import { toTitleKey } from './api/cheapSharkDeals'
 import type { GameDeal, Platform } from './types'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
-
-function toTitleKey(deal: GameDeal) {
-  return deal.title.trim().toLowerCase()
-}
 
 export function useGameDeals(platform: '전체' | Platform) {
   const [deals, setDeals] = useState<GameDeal[]>([])
@@ -37,7 +34,7 @@ export function useGameDeals(platform: '전체' | Platform) {
       try {
         const next = await fetchGameDeals(platform)
         if (cancelled) return
-        knownTitlesRef.current = new Set(next.map(toTitleKey))
+        knownTitlesRef.current = new Set(next.map((deal) => toTitleKey(deal.title)))
         setDeals(next)
         setStatus('success')
         setHasMoreRemote(canLoadMoreDeals(platform, cursorRef.current))
@@ -75,7 +72,7 @@ export function useGameDeals(platform: '전체' | Platform) {
       cursorRef.current = cursor
 
       if (more.length > 0) {
-        for (const deal of more) knownTitlesRef.current.add(toTitleKey(deal))
+        for (const deal of more) knownTitlesRef.current.add(toTitleKey(deal.title))
         setDeals((prev) => [...prev, ...more])
       }
 
