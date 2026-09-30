@@ -7,6 +7,7 @@ import {
 } from './config'
 import { canFetchNintendoLive, getNintendoSnapshotDeals } from './consoleSnapshots'
 import { filterSafeNintendoDeals, isBlockedNintendoTitle } from './contentFilter'
+import { decodeHtmlEntities } from './contentRules.js'
 import { discountPercent } from './money'
 
 interface ParsedSaleCard {
@@ -99,7 +100,7 @@ function parseSaleCards(html: string, popularityBoost = 0): ParsedSaleCard[] {
 
     parsed.push({
       nsuid: href[2],
-      title: title[1].trim(),
+      title: decodeHtmlEntities(title[1].trim()),
       originalPrice,
       salePrice,
       thumbnailUrl: img?.[1] ?? '',

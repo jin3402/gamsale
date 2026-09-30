@@ -5,7 +5,7 @@
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { isBlockedNintendoTitle } from '../src/features/game-deals/api/contentRules.js'
+import { decodeHtmlEntities, isBlockedNintendoTitle } from '../src/features/game-deals/api/contentRules.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const outDir = join(__dirname, '../src/features/game-deals/api/snapshots')
@@ -71,7 +71,7 @@ async function fetchNintendo() {
       const img = card.match(/<img class="product-image-photo"[^>]*src="([^"]+)"/)
       if (!href || !title || !special || !old) continue
 
-      const name = title[1].trim()
+      const name = decodeHtmlEntities(title[1].trim())
       if (isBlockedNintendoTitle(name)) continue
 
       const originalPrice = parseWon(old[1])

@@ -1,3 +1,4 @@
+import { decodeHtmlEntities } from '../api/contentRules.js'
 import { resolveStoreUrl } from '../api/storeUrl'
 import type { GameDeal } from '../types'
 
@@ -11,6 +12,8 @@ export function loadWishlist(): GameDeal[] {
     if (!Array.isArray(parsed)) return []
     return parsed.filter(isGameDeal).map((deal) => ({
       ...deal,
+      // 엔티티가 풀리기 전에 찜한 닌텐도 게임도 제목이 제대로 보이게 해요.
+      title: deal.platform === 'Nintendo Switch' ? decodeHtmlEntities(deal.title) : deal.title,
       dealUrl: resolveStoreUrl(deal),
     }))
   } catch {
