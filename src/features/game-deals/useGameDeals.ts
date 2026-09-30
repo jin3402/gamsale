@@ -87,6 +87,8 @@ export function useGameDeals(platform: '전체' | Platform) {
 
   return {
     deals,
+    /** 목록이 새로 로드될 때마다 바뀌는 키예요. '더보기'로 이어붙일 때는 그대로예요. */
+    listKey: `${platform}:${reloadKey}`,
     status,
     errorMessage,
     isLoading: status === 'loading' || status === 'idle',
