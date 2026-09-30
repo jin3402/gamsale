@@ -361,8 +361,11 @@ async function main() {
     console.warn('[snapshot] xbox empty — kept previous snapshot')
   }
 
+  // 모든 플랫폼이 이전 스냅샷을 그대로 썼다면 생성 시각도 그대로 둬요.
+  // (새로 받은 데이터가 없는데 시각만 바뀌면 갱신된 것처럼 보여요)
+  const refreshed = nintendoLive.length > 0 || playstationLive.length > 0 || xboxLive.length > 0
   const payload = {
-    generatedAt: new Date().toISOString(),
+    generatedAt: refreshed || !previous?.generatedAt ? new Date().toISOString() : previous.generatedAt,
     nintendo,
     playstation,
     xbox,
