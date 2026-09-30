@@ -5,6 +5,7 @@
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { isBlockedNintendoTitle } from '../src/features/game-deals/api/contentRules.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const outDir = join(__dirname, '../src/features/game-deals/api/snapshots')
@@ -13,17 +14,6 @@ const DEAL_LIMIT = 150
 
 const PS_CATEGORY_ID = '3f772501-f6f8-49b7-abac-874a88ca4897'
 const PS_HASH = '9845afc0dbaab4965f6563fffc703f588c8e76792000e8610843b8d3ee9c4c09'
-
-/** src/features/game-deals/api/contentFilter.ts 와 동일하게 맞춰 주세요. */
-const ADULT_OR_SUGGESTIVE =
-  /(Hentai|Ecchi|Nude|NSFW|R-?18|18\+|Adult|エロ|アダルト|同人|성인|야한|누드|탈의|노출|착의|변태|음란|음행|능욕|조교|착정|사정|중출|촉수|NTR|寝取|人妻|痴漢|痴女|風俗|ソープ|援交|巨乳|貧乳|おっぱい|ヌード|裸|Harem|Succubus|Bikini|Lingerie|Fetish|Oppai|Boob|Pussy|Sex|Slave|Seduction|Temptation|Locker Room|Photo Girls|Good Girls|Steam Girls|Jigsaw Girls|Bad Girls|Puzzle Girls|Pool Party Girls|Splash Babes|Wild Desire|Pleasure|Deeper|Flip-Flip|Anime (Boys|Girls)|Anime Codex|Final Pose|No Retouch|Raw Photo|Cute Girls|Kawaii Anime|Gallery Unlock|갤러리 해금|Babe|Dating Sim|Waifu|Wife|Husband|Nurse|Maid|Seven Deadly Sins|LoveR|Hidden Legends)/i
-const LOW_QUALITY_JUNK =
-  /(공포 심리|위치전설|상식 배틀|명화|있을 리 없는|Quiz|Trivia|Jigsaw|Coloring Book|Wallpaper|Photo Album)/i
-
-function isBlockedNintendoTitle(title) {
-  const normalized = String(title).replace(/&#039;/g, "'").replace(/&amp;/g, '&').trim()
-  return ADULT_OR_SUGGESTIVE.test(normalized) || LOW_QUALITY_JUNK.test(normalized)
-}
 
 function parseWon(text) {
   const value = Number(String(text).replace(/[^\d]/g, ''))
