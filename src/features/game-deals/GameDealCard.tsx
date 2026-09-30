@@ -22,7 +22,8 @@ function GameDealCard({
   return (
     <article
       className="game-deal-card"
-      style={{ backgroundImage: `url(${deal.thumbnailUrl})` }}
+      // 외부 API가 준 URL이라 따옴표로 감싸 CSS 문법이 깨지지 않게 해요.
+      style={{ backgroundImage: `url(${JSON.stringify(deal.thumbnailUrl)})` }}
       role="button"
       tabIndex={0}
       aria-label={`${deal.title}, ${deal.discountRate}% 할인, 공유하기 또는 스토어에서 보기`}
