@@ -3,14 +3,11 @@ import { Button, IconButton, List, ListRow, Top } from '@toss/tds-mobile'
 import { shareWishlist } from './shareWishlist'
 import { useWishlistContext } from './useWishlistContext'
 import { SHARE_ACTION_LABEL } from '../dealActionLabels'
+import { formatKrw } from '../format'
 
 interface WishlistPanelProps {
   open: boolean
   onClose: () => void
-}
-
-function formatPrice(value: number) {
-  return `${value.toLocaleString('ko-KR')}원`
 }
 
 export default function WishlistPanel({ open, onClose }: WishlistPanelProps) {
@@ -71,7 +68,7 @@ export default function WishlistPanel({ open, onClose }: WishlistPanelProps) {
                   <ListRow.Texts
                     type="2RowTypeA"
                     top={deal.title}
-                    bottom={`${deal.platform} · -${deal.discountRate}% · ${formatPrice(deal.salePrice)}`}
+                    bottom={`${deal.platform} · -${deal.discountRate}% · ${formatKrw(deal.salePrice)}`}
                   />
                 }
                 right={

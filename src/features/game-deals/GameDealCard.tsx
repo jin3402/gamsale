@@ -1,4 +1,5 @@
 import { Badge, IconButton } from '@toss/tds-mobile'
+import { formatKrw } from './format'
 import type { GameDeal } from './types'
 
 interface GameDealCardProps {
@@ -7,10 +8,6 @@ interface GameDealCardProps {
   endsAtLabel: string | null
   onToggleWishlist: () => void
   onOpenActions: () => void
-}
-
-function formatPrice(value: number) {
-  return `${value.toLocaleString('ko-KR')}원`
 }
 
 export default function GameDealCard({
@@ -64,9 +61,9 @@ export default function GameDealCard({
             <p className="game-deal-card__platform">{deal.platform}</p>
             <h3 className="game-deal-card__title">{deal.title}</h3>
             <div className="game-deal-card__price">
-              <span className="game-deal-card__price-sale">{formatPrice(deal.salePrice)}</span>
+              <span className="game-deal-card__price-sale">{formatKrw(deal.salePrice)}</span>
               <span className="game-deal-card__price-original">
-                {formatPrice(deal.originalPrice)}
+                {formatKrw(deal.originalPrice)}
               </span>
             </div>
           </div>

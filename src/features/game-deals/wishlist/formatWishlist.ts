@@ -1,14 +1,11 @@
 import { resolveStoreUrl } from '../api/storeUrl'
+import { formatKrw } from '../format'
 import type { GameDeal } from '../types'
-
-function formatPrice(value: number) {
-  return `${value.toLocaleString('ko-KR')}원`
-}
 
 /** 게임 1개를 나타내는 공유용 텍스트 한 덩어리 — 위시리스트 공유와 개별 공유가 같은 형식을 써요. */
 function formatDealLine(deal: GameDeal) {
   const link = `\n   ${resolveStoreUrl(deal)}`
-  return `[${deal.platform}] ${deal.title}\n   -${deal.discountRate}% · ${formatPrice(deal.salePrice)} (정가 ${formatPrice(deal.originalPrice)})${link}`
+  return `[${deal.platform}] ${deal.title}\n   -${deal.discountRate}% · ${formatKrw(deal.salePrice)} (정가 ${formatKrw(deal.originalPrice)})${link}`
 }
 
 /** 공유용 텍스트 — 링크는 플랫폼 스토어(상품/검색)로 연결해요. */

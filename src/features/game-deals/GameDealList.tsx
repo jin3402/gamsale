@@ -4,6 +4,7 @@ import BannerAd from './ads/BannerAd'
 import { useInterstitialAd } from './ads/useInterstitialAd'
 import { buildFeedItems } from './buildFeedItems'
 import DealActionSheet from './DealActionSheet'
+import { formatEndsAt } from './format'
 import GameDealCard from './GameDealCard'
 import PlatformFilterChips, { type PlatformFilterValue } from './PlatformFilterChips'
 import { useEntryPromotionReward } from './promotion/usePromotionReward'
@@ -13,20 +14,6 @@ import { useGameDeals } from './useGameDeals'
 import { WishlistProvider } from './wishlist/WishlistContext'
 import { useWishlistContext } from './wishlist/useWishlistContext'
 import WishlistPanel from './wishlist/WishlistPanel'
-
-function formatEndsAt(value?: string) {
-  if (!value) return null
-
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) return null
-
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hours = String(date.getHours()).padStart(2, '0')
-  const minutes = String(date.getMinutes()).padStart(2, '0')
-
-  return `${month}/${day} ${hours}:${minutes}까지`
-}
 
 function GameDealListInner() {
   const [platform, setPlatform] = useState<PlatformFilterValue>('전체')
