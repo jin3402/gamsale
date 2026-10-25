@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { toTitleKey } from '../../features/game-deals/api/cheapSharkDeals'
 import { getUsdKrwRate } from '../../features/game-deals/api/exchangeRate'
 import { FIRST_MORE_PAGE, loadMorePlatformDeals, loadPlatformDeals } from '../data/catalog'
 import { PLATFORMS, type PlatformKey, type WebDeal } from '../data/types'
@@ -77,7 +78,7 @@ export function useCatalog() {
   const loadMore = useCallback(async () => {
     if (rate === null || isLoadingMore || !canLoadMore) return
     setIsLoadingMore(true)
-    const titles = new Set(deals.map((deal) => deal.title.trim().toLowerCase()))
+    const titles = new Set(deals.map((deal) => toTitleKey(deal.title)))
 
     try {
       for (const key of ['steam', 'epic'] as const) {

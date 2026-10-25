@@ -1,4 +1,3 @@
-/* eslint-disable */
 /** 자동 생성: npm run snapshot:deals — 수동 수정하지 마세요. */
 import type { GameDeal } from '../../types'
 

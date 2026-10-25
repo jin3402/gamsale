@@ -32,10 +32,6 @@ export default function BannerAd({
       callbacks: {
         onAdRendered: () => {
           setReady(true)
-          console.info('[ads] rendered', { slotIndex, adGroupId })
-        },
-        onAdImpression: () => {
-          console.info('[ads] impression', { slotIndex, adGroupId })
         },
         onAdFailedToRender: (payload) => {
           console.warn('[ads] failed', payload)

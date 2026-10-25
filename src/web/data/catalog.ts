@@ -1,4 +1,4 @@
-import { fetchMoreSteamDeals, fetchPopularSteamDeals } from '../../features/game-deals/api/cheapSharkClient'
+import { fetchMoreSteamDeals, fetchPopularSteamDeals } from '../../features/game-deals/api/steamClient'
 import { CHEAPSHARK_PAGES } from '../../features/game-deals/api/config'
 import { fetchMoreEpicDeals, fetchPopularEpicDeals } from '../../features/game-deals/api/epicClient'
 import { fetchNintendoDeals } from '../../features/game-deals/api/nintendoClient'

@@ -1,48 +1,42 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Button, IconButton, Loader, Result, Top } from '@toss/tds-mobile'
-import { DEAL_PAGE_SIZE } from './api/config'
 import BannerAd from './ads/BannerAd'
 import { useInterstitialAd } from './ads/useInterstitialAd'
 import { buildFeedItems } from './buildFeedItems'
 import DealActionSheet from './DealActionSheet'
+import { formatEndsAt } from './format'
 import GameDealCard from './GameDealCard'
 import PlatformFilterChips, { type PlatformFilterValue } from './PlatformFilterChips'
 import { useEntryPromotionReward } from './promotion/usePromotionReward'
 import type { GameDeal } from './types'
+import { useDealPaging } from './useDealPaging'
 import { useGameDeals } from './useGameDeals'
-import { WishlistProvider, useWishlistContext } from './wishlist/WishlistContext'
+import { WishlistProvider } from './wishlist/WishlistContext'
+import { useWishlistContext } from './wishlist/useWishlistContext'
 import WishlistPanel from './wishlist/WishlistPanel'
-
-function formatEndsAt(value?: string) {
-  if (!value) return null
-
-  const date = new Date(value)
-  if (Number.isNaN(date.getTime())) return null
-
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hours = String(date.getHours()).padStart(2, '0')
-  const minutes = String(date.getMinutes()).padStart(2, '0')
-
-  return `${month}/${day} ${hours}:${minutes}까지`
-}
 
 function GameDealListInner() {
   const [platform, setPlatform] = useState<PlatformFilterValue>('전체')
-  const [visibleCount, setVisibleCount] = useState(DEAL_PAGE_SIZE)
   const [wishlistOpen, setWishlistOpen] = useState(false)
   const [actionDeal, setActionDeal] = useState<GameDeal | null>(null)
-  const { deals, isLoading, status, errorMessage, reload, isLoadingMore, hasMoreRemote, loadMore } =
-    useGameDeals(platform)
+  const {
+    deals,
+    listKey,
+    isLoading,
+    status,
+    errorMessage,
+    reload,
+    isLoadingMore,
+    hasMoreRemote,
+    loadMore,
+  } = useGameDeals(platform)
+  // 플랫폼을 바꾸거나 다시 시도할 때만 처음 개수로 돌아가요. (원격 '더보기' 뒤에는 유지)
+  const { visibleCount, showMore } = useDealPaging(listKey)
   const { has, toggle, count } = useWishlistContext()
   // 스토어 이동 전 전면 광고용 — 미리 백그라운드에서 로드해둬요.
   const { show: showInterstitialAd } = useInterstitialAd()
-  // 앱 진입 시 "서비스 이용하기" 프로모션(5원)을 기기당 1회 지급해요.
+  // 앱 진입 시 "서비스 이용하기" 프로모션 포인트를 기기당 1회 지급해요.
   useEntryPromotionReward()
-
-  useEffect(() => {
-    setVisibleCount(DEAL_PAGE_SIZE)
-  }, [platform, deals])
 
   const visibleDeals = useMemo(
     () => deals.slice(0, visibleCount),
@@ -61,14 +55,14 @@ function GameDealListInner() {
   const handleLoadMore = async () => {
     if (hasMoreLocal) {
       // 이미 가져와 있는 목록 중 아직 안 보여준 부분만 먼저 펼쳐요. (네트워크 요청 없음)
-      setVisibleCount((count) => Math.min(count + DEAL_PAGE_SIZE, deals.length))
+      showMore(deals.length)
       return
     }
 
     if (!hasMoreRemote) return
     // 여기서부터는 미리 받아둔 목록을 다 본 거라, 실시간으로 다음 페이지를 더 가져와요.
     await loadMore()
-    setVisibleCount((count) => count + DEAL_PAGE_SIZE)
+    showMore()
   }
 
   return (
@@ -135,8 +129,8 @@ function GameDealListInner() {
                     deal={item.deal}
                     wishlisted={has(item.deal.id)}
                     endsAtLabel={formatEndsAt(item.deal.endsAt)}
-                    onToggleWishlist={() => toggle(item.deal)}
-                    onOpenActions={() => setActionDeal(item.deal)}
+                    onToggleWishlist={toggle}
+                    onOpenActions={setActionDeal}
                   />
                 </div>
               ),
