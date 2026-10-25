@@ -146,11 +146,43 @@ npm run build
 ```
 
 ### 설정
-- `granite.config.ts` — `appName`, `brand.displayName`, `brand.icon`
+- `apps-in-toss.config.ts` — `appName`, `brand.primaryColor`, `permissions`
+  - SDK 3.x부터 앱 표시명·아이콘은 설정 파일이 아니라 **콘솔**에서 관리해요.
 - 광고 그룹 ID — `src/features/game-deals/ads/adIds.ts`
 - 프로모션 코드 — `src/features/game-deals/promotion/usePromotionReward.ts`
 
 > 공개 저장소용으로 복제할 때는 **본인 콘솔의 광고 ID·프로모션 코드**로 교체해 주세요.
+
+---
+
+## 웹 사이트 (Vercel)
+
+같은 데이터 로직으로 일반 웹용 **할인 게임 검색 사이트**도 운영해요. → https://gamsale.vercel.app
+
+| | 토스 미니앱 | 웹 사이트 |
+|---|---|---|
+| 진입점 | `index.html` → `src/main.tsx` | `web/index.html` → `src/web/main.tsx` |
+| 빌드 설정 | `vite.config.ts` | `vite.web.config.ts` |
+| UI | TDS (`@toss/tds-mobile`) | 자체 컴포넌트 (`src/web/components`) |
+| 광고·프로모션 | 토스 광고, 포인트 지급 | 없음 |
+
+`@toss/tds-mobile`은 앱인토스 밖의 도메인에서 실행을 막기 때문에, 웹 번들에는 TDS와 토스 SDK를 넣지 않아요. `src/features/game-deals/api` 같은 데이터 로직만 함께 써요.
+
+### 웹 기능
+- 게임 검색: 이미 불러온 할인 목록(콘솔 포함) + CheapShark 제목 검색으로 목록에 없는 Steam·Epic 게임 보충
+- 플랫폼(여러 개 선택)·최소 할인율·최대 가격(무료만 포함)·정렬(추천/할인율/가격/할인 금액/스팀 평점/출시일/이름)
+- 검색 조건과 열린 게임을 URL에 저장 → 검색 결과·게임 상세를 링크로 공유
+- 게임 상세: 역대 최저가와 날짜, 지금이 역대 최저가인지, 스팀 평가, 메타크리틱, 다른 스토어 가격
+- 찜 목록(브라우저 저장), 합계·절약 금액, 목록 공유
+- 무한 스크롤(Steam·Epic은 끝까지 가면 다음 페이지를 실시간으로 더 불러와요), 다크 모드, 모바일 레이아웃
+
+```bash
+npm run dev:web      # http://localhost:5174 (개발 프록시 사용)
+npm run build:web    # dist-web/
+npx vercel deploy --prod
+```
+
+배포 전에 `npm run snapshot:deals`로 콘솔 할인 스냅샷을 새로 만들면 웹의 PlayStation·Xbox·Switch 가격도 최신으로 바뀌어요.
 
 ---
 

@@ -27,8 +27,8 @@ export default function WishlistPanel({ open, onClose }: WishlistPanelProps) {
     try {
       // 공유가 성공하면 shareWishlist 내부(share.ts)에서 "서비스 공유하기" 프로모션을
       // 기기당 1회로 자동 지급 시도해요. 어떤 공유 경로든 동일하게 처리돼요.
-      await shareWishlist(items)
-      setStatus('공유 시트를 열었어요.')
+      const outcome = await shareWishlist(items)
+      setStatus(outcome === 'copied' ? '위시리스트를 클립보드에 복사했어요.' : '공유 시트를 열었어요.')
     } catch {
       setStatus('공유에 실패했어요. 다시 시도해 주세요.')
     } finally {

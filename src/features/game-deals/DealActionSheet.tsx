@@ -23,7 +23,10 @@ export default function DealActionSheet({ deal, onClose, showInterstitialAd }: D
   const handleShare = async () => {
     setSharing(true)
     try {
-      await shareMessage(formatDealShareText(deal), deal.title)
+      const outcome = await shareMessage(formatDealShareText(deal), deal.title)
+      if (outcome === 'copied') {
+        window.alert('공유 문구를 클립보드에 복사했어요. 원하는 곳에 붙여넣어 공유해 보세요.')
+      }
     } catch {
       // 공유 취소나 미지원 환경은 조용히 무시해요.
     } finally {

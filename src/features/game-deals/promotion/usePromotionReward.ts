@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { grantPromotionReward } from '@apps-in-toss/web-framework'
+import { isTossApp } from '../tossEnvironment'
 
 /**
  * "서비스 이용하고 5원 받기" 프로모션의 콘솔 테스트용 코드예요.
@@ -52,6 +53,11 @@ export async function grantEntryPromotionReward(
   promotionCode: string = DEFAULT_PROMOTION_CODE,
   amount = ENTRY_PROMOTION_AMOUNT,
 ): Promise<GrantPromotionRewardOutcome> {
+  // 토스 포인트는 토스 앱 안에서만 지급할 수 있어요. (일반 웹에서는 지급하지 않아요)
+  if (!isTossApp()) {
+    return { status: 'unsupported' }
+  }
+
   const storageKey = `${STORAGE_KEY_PREFIX}${promotionCode}`
 
   if (typeof window !== 'undefined' && window.localStorage.getItem(storageKey)) {

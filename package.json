@@ -8,9 +8,12 @@
     "snapshot:deals": "node ./scripts/generate-deal-snapshots.mjs",
     "prebuild": "node ./scripts/generate-deal-snapshots.mjs",
     "build": "node ./node_modules/vite/bin/vite.js build && node ./node_modules/@apps-in-toss/web-framework/bin/ait.js build",
+    "build:web": "node ./node_modules/vite/bin/vite.js build --config vite.web.config.ts",
     "lint": "eslint .",
     "preview": "node ./node_modules/vite/bin/vite.js preview",
-    "deploy": "node ./node_modules/@apps-in-toss/web-framework/bin/ait.js deploy"
+    "deploy": "node ./node_modules/@apps-in-toss/web-framework/bin/ait.js deploy",
+    "dev:web": "node ./node_modules/vite/bin/vite.js --config vite.web.config.ts",
+    "preview:web": "node ./node_modules/vite/bin/vite.js preview --config vite.web.config.ts"
   },
   "dependencies": {
     "@apps-in-toss/web-framework": "^3.6.0",
