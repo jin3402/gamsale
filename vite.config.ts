@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+import aitDevtools from "@apps-in-toss/devtools/unplugin";
+
 const nintendoStoreProxy = {
   target: 'https://store.nintendo.co.kr',
   changeOrigin: true,
@@ -50,7 +52,7 @@ const sharedProxy = {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [aitDevtools.vite(), react()],
   base: './',
   server: {
     host: true,
