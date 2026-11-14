@@ -9,14 +9,11 @@ import { SHARE_ACTION_LABEL, STORE_ACTION_LABEL } from './dealActionLabels'
 interface DealActionSheetProps {
   deal: GameDeal | null
   onClose: () => void
-  /** 전면 광고를 보여주고, 시청(또는 실패/미지원)이 끝나면 `onFinished`를 호출해요. */
-  showInterstitialAd: (onFinished?: () => void) => boolean
 }
 
 /** 게임 카드를 탭했을 때 "공유하기 / 스토어에서 보기"를 고를 수 있는 액션시트예요. */
-export default function DealActionSheet({ deal, onClose, showInterstitialAd }: DealActionSheetProps) {
+export default function DealActionSheet({ deal, onClose }: DealActionSheetProps) {
   const [sharing, setSharing] = useState(false)
-  const [openingStore, setOpeningStore] = useState(false)
 
   if (!deal) return null
 
@@ -36,15 +33,8 @@ export default function DealActionSheet({ deal, onClose, showInterstitialAd }: D
   }
 
   const handleOpenStore = () => {
-    const storeUrl = resolveStoreUrl(deal)
-    setOpeningStore(true)
-    // 전면 광고를 먼저 보여주고, 시청이 끝난 뒤에 스토어로 이동해요.
-    // 광고가 없거나(미지원 환경) 로드에 실패해도 여기서 안전하게 스토어로 넘어가요.
-    showInterstitialAd(() => {
-      setOpeningStore(false)
-      window.open(storeUrl, '_blank', 'noopener,noreferrer')
-      onClose()
-    })
+    window.open(resolveStoreUrl(deal), '_blank', 'noopener,noreferrer')
+    onClose()
   }
 
   return (
@@ -62,7 +52,7 @@ export default function DealActionSheet({ deal, onClose, showInterstitialAd }: D
         </div>
 
         <div className="deal-action-sheet__actions">
-          <Button size="large" display="block" loading={openingStore} onClick={handleOpenStore}>
+          <Button size="large" display="block" onClick={handleOpenStore}>
             {STORE_ACTION_LABEL}
           </Button>
           <Button

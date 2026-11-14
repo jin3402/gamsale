@@ -1,13 +1,9 @@
 import { useMemo, useState } from 'react'
 import { Button, IconButton, Loader, Result, Top } from '@toss/tds-mobile'
-import BannerAd from './ads/BannerAd'
-import { useInterstitialAd } from './ads/useInterstitialAd'
-import { buildFeedItems } from './buildFeedItems'
 import DealActionSheet from './DealActionSheet'
 import { formatEndsAt } from './format'
 import GameDealCard from './GameDealCard'
 import PlatformFilterChips, { type PlatformFilterValue } from './PlatformFilterChips'
-import { useEntryPromotionReward } from './promotion/usePromotionReward'
 import type { GameDeal } from './types'
 import { useDealPaging } from './useDealPaging'
 import { useGameDeals } from './useGameDeals'
@@ -33,23 +29,17 @@ function GameDealListInner() {
   // 플랫폼을 바꾸거나 다시 시도할 때만 처음 개수로 돌아가요. (원격 '더보기' 뒤에는 유지)
   const { visibleCount, showMore } = useDealPaging(listKey)
   const { has, toggle, count } = useWishlistContext()
-  // 스토어 이동 전 전면 광고용 — 미리 백그라운드에서 로드해둬요.
-  const { show: showInterstitialAd } = useInterstitialAd()
-  // 앱 진입 시 "서비스 이용하기" 프로모션 포인트를 기기당 1회 지급해요.
-  useEntryPromotionReward()
 
   const visibleDeals = useMemo(
     () => deals.slice(0, visibleCount),
     [deals, visibleCount],
   )
-  const feedItems = useMemo(() => buildFeedItems(visibleDeals, 5), [visibleDeals])
   const hasMoreLocal = visibleCount < deals.length
   const hasMore = hasMoreLocal || hasMoreRemote
 
   const handlePlatformChange = (next: PlatformFilterValue) => {
     if (next === platform) return
-    // 전체 ↔ Steam/Epic/Xbox/PlayStation/Nintendo 탭 전환 시에는 광고를 띄우지 않아요.
-    setPlatform(next)
+      setPlatform(next)
   }
 
   const handleLoadMore = async () => {
@@ -115,26 +105,20 @@ function GameDealListInner() {
         <div className="game-deal-list__empty">해당 플랫폼의 인기 할인 게임이 없어요.</div>
       ) : null}
 
-      {!isLoading && status === 'success' && feedItems.length > 0 ? (
+      {!isLoading && status === 'success' && visibleDeals.length > 0 ? (
         <>
           <div className="game-deal-list__items" role="list">
-            {feedItems.map((item) =>
-              item.type === 'ad' ? (
-                <div key={item.key} role="listitem" className="game-deal-list__ad-slot">
-                  <BannerAd slotIndex={item.slotIndex} />
-                </div>
-              ) : (
-                <div key={item.key} role="listitem">
-                  <GameDealCard
-                    deal={item.deal}
-                    wishlisted={has(item.deal.id)}
-                    endsAtLabel={formatEndsAt(item.deal.endsAt)}
-                    onToggleWishlist={toggle}
-                    onOpenActions={setActionDeal}
-                  />
-                </div>
-              ),
-            )}
+            {visibleDeals.map((deal) => (
+              <div key={deal.id} role="listitem">
+                <GameDealCard
+                  deal={deal}
+                  wishlisted={has(deal.id)}
+                  endsAtLabel={formatEndsAt(deal.endsAt)}
+                  onToggleWishlist={toggle}
+                  onOpenActions={setActionDeal}
+                />
+              </div>
+            ))}
           </div>
 
           {hasMore ? (
@@ -153,11 +137,7 @@ function GameDealListInner() {
       ) : null}
 
       <WishlistPanel open={wishlistOpen} onClose={() => setWishlistOpen(false)} />
-      <DealActionSheet
-        deal={actionDeal}
-        onClose={() => setActionDeal(null)}
-        showInterstitialAd={showInterstitialAd}
-      />
+      <DealActionSheet deal={actionDeal} onClose={() => setActionDeal(null)} />
     </div>
   )
 }

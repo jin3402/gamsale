@@ -38,9 +38,6 @@ vi.mock('./useGameDeals', async () => {
     },
   }
 })
-vi.mock('./ads/BannerAd', () => ({ default: () => null }))
-vi.mock('./ads/useInterstitialAd', () => ({ useInterstitialAd: () => ({ show: () => false }) }))
-vi.mock('./promotion/usePromotionReward', () => ({ useEntryPromotionReward: () => {} }))
 
 function countCards(container: HTMLElement) {
   return container.querySelectorAll('.game-deal-card').length

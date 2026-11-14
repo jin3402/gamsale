@@ -199,16 +199,6 @@
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
-.game-deal-list__ad-slot {
-  width: 100%;
-}
-
-.banner-ad {
-  width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
 .wishlist-entry {
   position: relative;
   display: inline-flex;
