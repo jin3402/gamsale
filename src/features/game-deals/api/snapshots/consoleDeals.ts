@@ -7,7 +7,7 @@ export const consoleDealSnapshot: {
   playstation: GameDeal[]
   xbox: GameDeal[]
 } = {
-  "generatedAt": "2026-11-14T13:34:59.344Z",
+  "generatedAt": "2026-11-15T15:18:45.102Z",
   "nintendo": [
     {
       "id": "switch-70010000138136",
@@ -30,16 +30,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000137006"
     },
     {
-      "id": "switch-70010000135002",
-      "title": "Puzzle X: Model Girls",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/2/b/2b295561855a5a6df1e4d1cfd352c4e9f0bc7b7bfc2596a01935e0b01d877bf7.jpg",
-      "originalPrice": 26990,
-      "salePrice": 1000,
-      "discountRate": 96,
-      "dealUrl": "https://store.nintendo.co.kr/70010000135002"
-    },
-    {
       "id": "switch-70010000138165",
       "title": "Yummy Girl: Honey Bloom",
       "platform": "Nintendo Switch",
@@ -50,14 +40,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000138165"
     },
     {
-      "id": "switch-70010000135450",
-      "title": "Very Scary Game",
+      "id": "switch-70010000066011",
+      "title": "드래곤 퀘스트 몬스터즈 3 마족 왕자와 엘프의 여행",
       "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/4/9/4918349ab9ca2831ab611e1ce7e62dc5bfa3031bda3d16adc131824baf274726.jpg",
-      "originalPrice": 12990,
-      "salePrice": 1000,
-      "discountRate": 92,
-      "dealUrl": "https://store.nintendo.co.kr/70010000135450"
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/e/d/edd8d0104b679e78f83d740015f198cef065544f18667f1c1057b5dea80c5616_1687335209.jpg",
+      "originalPrice": 69800,
+      "salePrice": 9070,
+      "discountRate": 87,
+      "dealUrl": "https://store.nintendo.co.kr/70010000066011"
     },
     {
       "id": "switch-70010000112486",
@@ -88,6 +78,16 @@ export const consoleDealSnapshot: {
       "salePrice": 2660,
       "discountRate": 81,
       "dealUrl": "https://store.nintendo.co.kr/70010000124967"
+    },
+    {
+      "id": "switch-70010000130747",
+      "title": "Farming Homestead",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/4/f/4f7eb7f308783de5d283a6b90fd61f6e7935460d40d7b8d9d306a36d25891125.jpg",
+      "originalPrice": 7990,
+      "salePrice": 1490,
+      "discountRate": 81,
+      "dealUrl": "https://store.nintendo.co.kr/70010000130747"
     },
     {
       "id": "switch-70010000074353",
@@ -140,6 +140,16 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000137480"
     },
     {
+      "id": "switch-70010000129286",
+      "title": "PARCEL INSPECTION SIMULATOR",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/8/7/87865baec13f30ca25de9dae316737594889cae83b3cc17f456b48ddba5d2d10.jpg",
+      "originalPrice": 17990,
+      "salePrice": 4480,
+      "discountRate": 75,
+      "dealUrl": "https://store.nintendo.co.kr/70010000129286"
+    },
+    {
       "id": "switch-70010000134310",
       "title": "어지간히 야꾸 Re: Return of KUSOGAKI",
       "platform": "Nintendo Switch",
@@ -148,6 +158,56 @@ export const consoleDealSnapshot: {
       "salePrice": 1000,
       "discountRate": 71,
       "dealUrl": "https://store.nintendo.co.kr/70010000134310"
+    },
+    {
+      "id": "switch-70010000125827",
+      "title": "Hill Climb Legends",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/c/7/c7c60d3b5a93734f0814539e408bd74e90df2ae98fe4137aff6e580ced503108.jpg",
+      "originalPrice": 4900,
+      "salePrice": 1490,
+      "discountRate": 70,
+      "dealUrl": "https://store.nintendo.co.kr/70010000125827"
+    },
+    {
+      "id": "switch-70010000136894",
+      "title": "Cat Magnifier",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/7/2/7277e4355e1c1f1f964bf315f8b8cd5dfef711bc276029831204b65d3693256a.jpg",
+      "originalPrice": 7000,
+      "salePrice": 2100,
+      "discountRate": 70,
+      "dealUrl": "https://store.nintendo.co.kr/70010000136894"
+    },
+    {
+      "id": "switch-70010000125478",
+      "title": "Tiny Crown",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/f/f/ff2418205bf18edb01c06ad28796316315be64a47f8a4b36bfbe65eb33efa2dc.jpg",
+      "originalPrice": 4890,
+      "salePrice": 1490,
+      "discountRate": 70,
+      "dealUrl": "https://store.nintendo.co.kr/70010000125478"
+    },
+    {
+      "id": "switch-70010000135701",
+      "title": "The Pit Is Hungry",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/f/4/f409786f64cc2c223d97deb0268c6102529390b5552a34ab7f5cdccfd643570d.jpg",
+      "originalPrice": 6700,
+      "salePrice": 2010,
+      "discountRate": 70,
+      "dealUrl": "https://store.nintendo.co.kr/70010000135701"
+    },
+    {
+      "id": "switch-70010000136673",
+      "title": "Swing Shift",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/2/5/250d214ed4262b5b58f14dedf9dff283362f9515599a29a369367e5682e41484.jpg",
+      "originalPrice": 7200,
+      "salePrice": 2160,
+      "discountRate": 70,
+      "dealUrl": "https://store.nintendo.co.kr/70010000136673"
     },
     {
       "id": "switch-70010000128231",
@@ -160,54 +220,34 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000128231"
     },
     {
-      "id": "switch-70010000135242",
-      "title": "My Clothing Store Simulator",
+      "id": "switch-70010000136646",
+      "title": "Obby Sword Master",
       "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/f/4/f4cd590353acfa29a6ad75be2e19ecd19a77d9987455c069ad2d94cdeee8bb92.jpg",
-      "originalPrice": 13650,
-      "salePrice": 4090,
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/6/e/6edf5a0a68105fe8bfaa83807053e72c8a130262a6571a287b15f812f38b3efb.jpg",
+      "originalPrice": 7200,
+      "salePrice": 2160,
       "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000135242"
+      "dealUrl": "https://store.nintendo.co.kr/70010000136646"
     },
     {
-      "id": "switch-70010000133199",
-      "title": "Scary Ring",
+      "id": "switch-70010000134146",
+      "title": "Horse Spirit Valley 2",
       "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/d/c/dccb5905b308fb0c356bf813903463c4ea9c7ae502dac9c85a24b08ca33b26c7.jpg",
-      "originalPrice": 9600,
-      "salePrice": 2880,
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/4/a/4a4f2d752e597b2c1a442608ebb3d894dd431cc5a1a656a80ae20ef5b4db693b.jpg",
+      "originalPrice": 10000,
+      "salePrice": 3000,
       "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000133199"
+      "dealUrl": "https://store.nintendo.co.kr/70010000134146"
     },
     {
-      "id": "switch-70010000135415",
-      "title": "Naughty Baby",
+      "id": "switch-70010000134030",
+      "title": "Horse Spirit Valley",
       "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/b/c/bcba8070c2c693ea8e6957e264ea9cc17cd84ec625e326d8c9fab3f2440a7080.jpeg",
-      "originalPrice": 6910,
-      "salePrice": 2070,
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/3/c/3c556948c9472a3d9c85b199c168f6940809d08c0d5bd404e4878db948a3ce86.jpg",
+      "originalPrice": 7200,
+      "salePrice": 2160,
       "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000135415"
-    },
-    {
-      "id": "switch-70010000133390",
-      "title": "My Mart",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/5/2/521d2f621c10f22de8364987817fe13b6a68d9f069e73ddf1af4bb1f0505d025.jpg",
-      "originalPrice": 9670,
-      "salePrice": 2900,
-      "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000133390"
-    },
-    {
-      "id": "switch-70010000129147",
-      "title": "Warnet Life",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/8/b/8ba0bfcdadca2efcf30e9eab61df1e65913641f6d7b6941243da5f434fbf6928.jpg",
-      "originalPrice": 14090,
-      "salePrice": 4220,
-      "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000129147"
+      "dealUrl": "https://store.nintendo.co.kr/70010000134030"
     },
     {
       "id": "switch-70010000123224",
@@ -220,26 +260,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000123224"
     },
     {
-      "id": "switch-70010000132966",
-      "title": "Smash Cat",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/4/4/440550efae5152095436b9b722278cb5834d52c2767a4ac12ba1b34f6aebce73.jpg",
-      "originalPrice": 7110,
-      "salePrice": 2130,
-      "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000132966"
-    },
-    {
-      "id": "switch-70010000130683",
-      "title": "Street Food Simulator",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/c/1/c18170492174ce71a7c26ea894d96e08dae771c125b22d923118b49b7556f13d.jpg",
-      "originalPrice": 14520,
-      "salePrice": 4350,
-      "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000130683"
-    },
-    {
       "id": "switch-70010000126745",
       "title": "Handyman Flipper: House Stories",
       "platform": "Nintendo Switch",
@@ -250,14 +270,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000126745"
     },
     {
-      "id": "switch-70010000132108",
-      "title": "Captive",
+      "id": "switch-70010000131845",
+      "title": "Loree 3D",
       "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/3/2/3223de818bf102b80a9756d23dff7c071bd5fb5cb8ea88cce061b58234e4390c.jpg",
-      "originalPrice": 10840,
-      "salePrice": 3250,
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/5/e/5e86211b324b6bb6f0869ec7fddc391e0386b54d375653188c23310f11b6d334.jpg",
+      "originalPrice": 7400,
+      "salePrice": 2220,
       "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000132108"
+      "dealUrl": "https://store.nintendo.co.kr/70010000131845"
     },
     {
       "id": "switch-70010000126984",
@@ -280,26 +300,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000123043"
     },
     {
-      "id": "switch-70010000132419",
-      "title": "Angry Raccoon",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/1/1/11ad91658affda218a39af5923f529d7449f79b53019da3ae086c813c79f08df.jpg",
-      "originalPrice": 7430,
-      "salePrice": 2220,
-      "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000132419"
-    },
-    {
-      "id": "switch-70010000131476",
-      "title": "Horror Cliche",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/4/8/48269d285217fb6c105d1d4397cd9316336e2bf8a94a535fe290f98398293041.jpg",
-      "originalPrice": 10840,
-      "salePrice": 3250,
-      "discountRate": 70,
-      "dealUrl": "https://store.nintendo.co.kr/70010000131476"
-    },
-    {
       "id": "switch-70010000043097",
       "title": "페르소나5 더 로열 (PERSONA5 THE ROYAL)",
       "platform": "Nintendo Switch",
@@ -318,6 +318,26 @@ export const consoleDealSnapshot: {
       "salePrice": 2990,
       "discountRate": 68,
       "dealUrl": "https://store.nintendo.co.kr/70010000140736"
+    },
+    {
+      "id": "switch-70010000125201",
+      "title": "Cloud Golf",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/b/5/b501d90ec5c4679afaf11cf0d16f9ad52ca21e6b768de36cd4b2e1c017450a9a.jpg",
+      "originalPrice": 4500,
+      "salePrice": 1490,
+      "discountRate": 67,
+      "dealUrl": "https://store.nintendo.co.kr/70010000125201"
+    },
+    {
+      "id": "switch-70010000123105",
+      "title": "Pirate Havoc",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/9/b/9bfe421876263d825d4c60b3d51ed60ff3220395c90735cf6a8af4e1f9473ebf.jpg",
+      "originalPrice": 4200,
+      "salePrice": 1490,
+      "discountRate": 65,
+      "dealUrl": "https://store.nintendo.co.kr/70010000123105"
     },
     {
       "id": "switch-70010000124601",
@@ -610,16 +630,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000132307"
     },
     {
-      "id": "switch-70010000130940",
-      "title": "Tome of the Damned (저주받은 자들의 서)",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/5/4/5489f07be60e7933b8bb0ca2a850924977bcd5e322df79385678858c19bedad5.jpg",
-      "originalPrice": 18700,
-      "salePrice": 7480,
-      "discountRate": 60,
-      "dealUrl": "https://store.nintendo.co.kr/70010000130940"
-    },
-    {
       "id": "switch-70010000121547",
       "title": "옛날 옛적에 괴혼",
       "platform": "Nintendo Switch",
@@ -840,26 +850,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000126373"
     },
     {
-      "id": "switch-70010000111455",
-      "title": "데이브 더 다이버 (DAVE THE DIVER) Nintendo Switch 2 Edition",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/e/9/e9f85d4cd497fb6a93f9ae2a27e239299fa1e751e53a3357bf35c13fa8d0812c.jpg",
-      "originalPrice": 24000,
-      "salePrice": 13200,
-      "discountRate": 45,
-      "dealUrl": "https://store.nintendo.co.kr/70010000111455"
-    },
-    {
-      "id": "switch-70010000060369",
-      "title": "데이브 더 다이버 (DAVE THE DIVER)",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/e/7/e77cbe3c83da8de952bce5bc0f0960092dbc2e08d377f0e082673239322301bb.jpg",
-      "originalPrice": 24000,
-      "salePrice": 13200,
-      "discountRate": 45,
-      "dealUrl": "https://store.nintendo.co.kr/70010000060369"
-    },
-    {
       "id": "switch-70010000138318",
       "title": "X-Force Genesis 2",
       "platform": "Nintendo Switch",
@@ -868,16 +858,6 @@ export const consoleDealSnapshot: {
       "salePrice": 7200,
       "discountRate": 40,
       "dealUrl": "https://store.nintendo.co.kr/70010000138318"
-    },
-    {
-      "id": "switch-70010000130657",
-      "title": "Ragdoll Kart Simulator 2026",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/5/e/5e39889489bce0881607d4a29bfbe66c6d7f2055453f6d3370d978074d495dd3.jpg",
-      "originalPrice": 6990,
-      "salePrice": 4190,
-      "discountRate": 40,
-      "dealUrl": "https://store.nintendo.co.kr/70010000130657"
     },
     {
       "id": "switch-70010000129267",
@@ -890,14 +870,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000129267"
     },
     {
-      "id": "switch-70010000119768",
-      "title": "쥬라기 월드 에볼루션 2: 컴플리트 에디션",
+      "id": "switch-70010000113187",
+      "title": "Wake Up, Lia!",
       "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/9/1/9160581588abd2e7a286b88b12e0673f9db65490cf579dcd4ca5039b45e43623.jpg",
-      "originalPrice": 64900,
-      "salePrice": 38940,
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/6/9/6905e3bf51b38a48e57c4c656523e00606608f520b4b5c3a5b55169adc90ae19.jpg",
+      "originalPrice": 6000,
+      "salePrice": 3600,
       "discountRate": 40,
-      "dealUrl": "https://store.nintendo.co.kr/70010000119768"
+      "dealUrl": "https://store.nintendo.co.kr/70010000113187"
     },
     {
       "id": "switch-70010000060322",
@@ -920,6 +900,16 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000141022"
     },
     {
+      "id": "switch-70010000106692",
+      "title": "신모의 클리파",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/5/9/5968b05702b15928afe9974ec5c5a4ee349d86e4275a22f08d6fc3856d3c947f.jpg",
+      "originalPrice": 29800,
+      "salePrice": 19370,
+      "discountRate": 35,
+      "dealUrl": "https://store.nintendo.co.kr/70010000106692"
+    },
+    {
       "id": "switch-70010000118243",
       "title": "Harold Halibut",
       "platform": "Nintendo Switch",
@@ -928,16 +918,6 @@ export const consoleDealSnapshot: {
       "salePrice": 29410,
       "discountRate": 33,
       "dealUrl": "https://store.nintendo.co.kr/70010000118243"
-    },
-    {
-      "id": "switch-70010000118415",
-      "title": "꿈꾸니까 로맨스인 거잖아(Because It's a Dream, It Must Be Romance: Connecting Hearts Across Realities)",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/d/7/d7bbd7275ff1ef9f19a1dd9133725aeb1277e984b930b97e4d8d910812b415c1.jpg",
-      "originalPrice": 29000,
-      "salePrice": 19430,
-      "discountRate": 33,
-      "dealUrl": "https://store.nintendo.co.kr/70010000118415"
     },
     {
       "id": "switch-70010000133865",
@@ -1030,16 +1010,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000111689"
     },
     {
-      "id": "switch-70010000116957",
-      "title": "NBA 2K27",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/9/c/9c9c88c3f60c207da15e721011d6c043972712f15a89420c810b2bcf9f0044e9.jpg",
-      "originalPrice": 84800,
-      "salePrice": 59360,
-      "discountRate": 30,
-      "dealUrl": "https://store.nintendo.co.kr/70010000116957"
-    },
-    {
       "id": "switch-70010000107522",
       "title": "Ghetto Zombies: Graffiti Squad",
       "platform": "Nintendo Switch",
@@ -1068,26 +1038,6 @@ export const consoleDealSnapshot: {
       "salePrice": 2800,
       "discountRate": 30,
       "dealUrl": "https://store.nintendo.co.kr/70010000131516"
-    },
-    {
-      "id": "switch-70010000122703",
-      "title": "도깨비 술래잡기2",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/e/6/e62e6acbdecd3e49556b5adb61c803ac4b05ac4b3bc8b94eec2f8a75e99c93d5.jpg",
-      "originalPrice": 18500,
-      "salePrice": 12950,
-      "discountRate": 30,
-      "dealUrl": "https://store.nintendo.co.kr/70010000122703"
-    },
-    {
-      "id": "switch-70010000130623",
-      "title": "도깨비 술래잡기2",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/e/6/e62e6acbdecd3e49556b5adb61c803ac4b05ac4b3bc8b94eec2f8a75e99c93d5_1.jpg",
-      "originalPrice": 30000,
-      "salePrice": 21000,
-      "discountRate": 30,
-      "dealUrl": "https://store.nintendo.co.kr/70010000130623"
     },
     {
       "id": "switch-70010000137834",
@@ -1180,26 +1130,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000137190"
     },
     {
-      "id": "switch-70010000137486",
-      "title": "선택지로 스터디 쉬운 영단어",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/e/9/e931c703c69e85131c9c41886f6f596b59875377bfde8f25d4c5bf905cf68614.jpg",
-      "originalPrice": 3900,
-      "salePrice": 2900,
-      "discountRate": 26,
-      "dealUrl": "https://store.nintendo.co.kr/70010000137486"
-    },
-    {
-      "id": "switch-70010000138422",
-      "title": "안경미소녀의 힐링 틀린그림찾기",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/d/3/d3d46be0e4cfdb745dae38fa7b05784a654a8a23f78a11b7eb0056e57774be16.jpg",
-      "originalPrice": 3900,
-      "salePrice": 2900,
-      "discountRate": 26,
-      "dealUrl": "https://store.nintendo.co.kr/70010000138422"
-    },
-    {
       "id": "switch-70010000137761",
       "title": "늘어지는 그녀의 휴일 관찰 퍼즐",
       "platform": "Nintendo Switch",
@@ -1250,6 +1180,16 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000135600"
     },
     {
+      "id": "switch-70010000115235",
+      "title": "SHINOBI 복수의 참격",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/9/a/9a38d013c201dd46e4ebda8f489753847be42113b196d25fe46a7d5a3a75a14f.jpg",
+      "originalPrice": 27800,
+      "salePrice": 20850,
+      "discountRate": 25,
+      "dealUrl": "https://store.nintendo.co.kr/70010000115235"
+    },
+    {
       "id": "switch-70010000120828",
       "title": "Tap Monster Duel",
       "platform": "Nintendo Switch",
@@ -1278,16 +1218,6 @@ export const consoleDealSnapshot: {
       "salePrice": 44850,
       "discountRate": 25,
       "dealUrl": "https://store.nintendo.co.kr/70010000104121"
-    },
-    {
-      "id": "switch-70010000129421",
-      "title": "벤의 좀비 아포칼립스(Ben's Zombie Apocalypse)",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/8/9/8955deb667e1247ddc1adf2e5c5637884f4ceea1f9e7ad82c319e8ebb2a6306e.jpg",
-      "originalPrice": 19000,
-      "salePrice": 14630,
-      "discountRate": 23,
-      "dealUrl": "https://store.nintendo.co.kr/70010000129421"
     },
     {
       "id": "switch-70010000134530",
@@ -1390,16 +1320,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000131185"
     },
     {
-      "id": "switch-70010000128735",
-      "title": "Sword of the Sea",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/b/5/b53578325c55c682427849041d9fed1f4fca7c22553e1d2993e91da452851d14.jpg",
-      "originalPrice": 39800,
-      "salePrice": 31800,
-      "discountRate": 20,
-      "dealUrl": "https://store.nintendo.co.kr/70010000128735"
-    },
-    {
       "id": "switch-70010000124452",
       "title": "Air Hares",
       "platform": "Nintendo Switch",
@@ -1408,16 +1328,6 @@ export const consoleDealSnapshot: {
       "salePrice": 4480,
       "discountRate": 20,
       "dealUrl": "https://store.nintendo.co.kr/70010000124452"
-    },
-    {
-      "id": "switch-70010000121515",
-      "title": "Kemono Heroes",
-      "platform": "Nintendo Switch",
-      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/f/9/f9369773c33a4112ddc9f4666cc4daeed586349a66a04c02b2a3112cb9169147.jpg",
-      "originalPrice": 16500,
-      "salePrice": 13200,
-      "discountRate": 20,
-      "dealUrl": "https://store.nintendo.co.kr/70010000121515"
     },
     {
       "id": "switch-70010000135772",
@@ -1440,6 +1350,26 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.nintendo.co.kr/70010000126045"
     },
     {
+      "id": "switch-70010000120160",
+      "title": "TOEM 2",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/7/6/766e81c699826c7a52191b830e1e9664de5cb25520a6108df22273a81c83d2ec.jpg",
+      "originalPrice": 21800,
+      "salePrice": 17440,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000120160"
+    },
+    {
+      "id": "switch-70010000127397",
+      "title": "TOEM 2",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/7/6/766e81c699826c7a52191b830e1e9664de5cb25520a6108df22273a81c83d2ec_1.jpg",
+      "originalPrice": 21800,
+      "salePrice": 17440,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000127397"
+    },
+    {
       "id": "switch-70010000117656",
       "title": "Courier",
       "platform": "Nintendo Switch",
@@ -1458,6 +1388,26 @@ export const consoleDealSnapshot: {
       "salePrice": 11120,
       "discountRate": 20,
       "dealUrl": "https://store.nintendo.co.kr/70010000128027"
+    },
+    {
+      "id": "switch-70010000117580",
+      "title": "Dragon Quest Heroes: Torneko‘s Mystery Dungeon -Classic HD-",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/6/6/6662f61dccad0a738224303791c53a31cd01dfbfffc8de2b164856a151dd53ea.jpg",
+      "originalPrice": 31000,
+      "salePrice": 24800,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000117580"
+    },
+    {
+      "id": "switch-70010000117586",
+      "title": "Dragon Quest Heroes: Torneko‘s Mystery Dungeon -Classic HD-",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/6/6/6662f61dccad0a738224303791c53a31cd01dfbfffc8de2b164856a151dd53ea_1.jpg",
+      "originalPrice": 31000,
+      "salePrice": 24800,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000117586"
     },
     {
       "id": "switch-70010000054198",
@@ -1508,9 +1458,69 @@ export const consoleDealSnapshot: {
       "salePrice": 21200,
       "discountRate": 20,
       "dealUrl": "https://store.nintendo.co.kr/70010000124711"
+    },
+    {
+      "id": "switch-70010000129165",
+      "title": "Gelatinous: Humanity Lost",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/f/d/fd0cf8cd7285db4e4188ce6043152f794fedd5414c4c6f7fbd03113e6af8ba94.jpg",
+      "originalPrice": 13900,
+      "salePrice": 11120,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000129165"
+    },
+    {
+      "id": "switch-70010000131885",
+      "title": "Project City",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/f/d/fd09879c6d38c7820d0a196754e2ea5f19e0d76a2bd8df2a515cfd140ffd882f.jpg",
+      "originalPrice": 14000,
+      "salePrice": 11200,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000131885"
+    },
+    {
+      "id": "switch-70010000072294",
+      "title": "Chew Chew Mimic",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/d/0/d01040bb4698a0208d954a1098621c03c78f6bded6aec38327c43b5c160c6903.jpg",
+      "originalPrice": 11900,
+      "salePrice": 9520,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000072294"
+    },
+    {
+      "id": "switch-70010000125651",
+      "title": "퍼퍼가이스트 (Puppergeist)",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/5/7/57100370fbd0513372146078e67daac7d1ca3574dd6439f6cca69cdb33aaf3ba.jpg",
+      "originalPrice": 7580,
+      "salePrice": 6060,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000125651"
+    },
+    {
+      "id": "switch-70010000128039",
+      "title": "Zed and Zee",
+      "platform": "Nintendo Switch",
+      "thumbnailUrl": "https://store.nintendo.co.kr/media/catalog/product/cache/55351146f864384e20b16a2043f3a323/5/2/52df077a69d1376697abcc454efbfba2ba698dcc507ae93b5b98fad935ed3ace.jpg",
+      "originalPrice": 13900,
+      "salePrice": 11120,
+      "discountRate": 20,
+      "dealUrl": "https://store.nintendo.co.kr/70010000128039"
     }
   ],
   "playstation": [
+    {
+      "id": "ps-UP3501-CUSA08661_00-THCOTWBASE000000",
+      "title": "theHunter: Call of the Wild™",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202506/1610/26d0ff16f42eb2c053429a5e1fc5c430803e824dfbc435ed.png",
+      "originalPrice": 43486,
+      "salePrice": 6511,
+      "discountRate": 85,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP3501-CUSA08661_00-THCOTWBASE000000"
+    },
     {
       "id": "ps-UP1564-PPSA02400_00-0963755805837028",
       "title": "Car Mechanic Simulator 2021 DLC MegaPack",
@@ -1532,6 +1542,16 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP4040-PPSA01949_00-CONTROLUEPS50000"
     },
     {
+      "id": "ps-UP0001-CUSA05904_00-FARCRY5GAME00000",
+      "title": "Far Cry 5",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/0521/15618b4627bb9e14016484379865574b6caf9041544946c8.png",
+      "originalPrice": 86986,
+      "salePrice": 13036,
+      "discountRate": 85,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0001-CUSA05904_00-FARCRY5GAME00000"
+    },
+    {
       "id": "ps-UP1003-PPSA03746_00-TESVSKYRIM000000",
       "title": "The Elder Scrolls V: Skyrim Special Edition - PS5 & PS4",
       "platform": "PlayStation",
@@ -1542,64 +1562,24 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP1003-PPSA03746_00-TESVSKYRIM000000"
     },
     {
-      "id": "ps-UP0177-PPSA16268_00-LIKEADRGNGAIDEN0",
-      "title": "Like a Dragon Gaiden: The Man Who Erased His Name PS4 & PS5",
+      "id": "ps-UP0001-CUSA02902_00-GRWNCSANORMAL000",
+      "title": "Tom Clancy's Ghost Recon Wildlands",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202305/1808/1e3cee649ba174d5b2d2b4dfbf868acbd3e475c650aecabb.png",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/0808/a0b12dbede049aedfb7650056f4eda03b924ac524482388b.png",
       "originalPrice": 72486,
       "salePrice": 14486,
       "discountRate": 80,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0177-PPSA16268_00-LIKEADRGNGAIDEN0"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0001-CUSA02902_00-GRWNCSANORMAL000"
     },
     {
-      "id": "ps-UP0700-PPSA09536_00-JJTKCDLXEDITION0",
-      "title": "Jujutsu Kaisen Cursed Clash Deluxe Edition PS4 & PS5",
+      "id": "ps-UP0082-PPSA01903_00-5827003902180177",
+      "title": "FINAL FANTASY VII REMAKE INTERGRADE",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202401/1801/4332c127a23ce9ba5219f2b2e8015487ad6eb6f82ac4f408.png",
-      "originalPrice": 115985,
-      "salePrice": 28985,
-      "discountRate": 75,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA09536_00-JJTKCDLXEDITION0"
-    },
-    {
-      "id": "ps-UP0177-PPSA09770_00-UNICORNOVERLORD0",
-      "title": "Unicorn Overlord",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202310/2611/2ef3bfca0f1b197bbe71cfda286fa80ebaaf2fe204b3ccc1.png",
-      "originalPrice": 86986,
-      "salePrice": 21736,
-      "discountRate": 75,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0177-PPSA09770_00-UNICORNOVERLORD0"
-    },
-    {
-      "id": "ps-UP5245-PPSA02452_00-6063362694848820",
-      "title": "Subnautica PS4 & PS5",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/img/rnd/202009/3006/C76j3lYg8BNBWJRSYtI2ONbo.png",
-      "originalPrice": 43486,
-      "salePrice": 10861,
-      "discountRate": 75,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP5245-PPSA02452_00-6063362694848820"
-    },
-    {
-      "id": "ps-UP6758-PPSA03268_00-6401393671841114",
-      "title": "Disco Elysium - The Final Cut",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/1214/gcMVHVG82HnDo0A6WHl6WR6H.png",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/1515/0GxrqnoNV8rIHsGCE1hjAKSF.png",
       "originalPrice": 57986,
-      "salePrice": 14486,
-      "discountRate": 75,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP6758-PPSA03268_00-6401393671841114"
-    },
-    {
-      "id": "ps-EP4295-PPSA14455_00-EOAPS500000000EU",
-      "title": "Empire of the Ants",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202410/3011/3fa54aeff5be80830260f688d3b58bef16aff72c93dd2cfd.png",
-      "originalPrice": 57986,
-      "salePrice": 14486,
-      "discountRate": 75,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP4295-PPSA14455_00-EOAPS500000000EU"
+      "salePrice": 11586,
+      "discountRate": 80,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0082-PPSA01903_00-5827003902180177"
     },
     {
       "id": "ps-UP1018-CUSA00967_00-MORTALKOMBATX000",
@@ -1612,14 +1592,64 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP1018-CUSA00967_00-MORTALKOMBATX000"
     },
     {
-      "id": "ps-EP2649-PPSA28662_00-0884514697841290",
-      "title": "Airplane Flight Simulator : EVO",
+      "id": "ps-UP4389-PPSA04734_00-MXVSATV2021PS5US",
+      "title": "MX vs ATV Legends",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/3009/b7c7bde3fd09be9b340f3b9a0a8d9b39c4074ead82506d58.png",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202111/2211/fUnFAW1jxOLgE4ftvHW7SfZF.png",
+      "originalPrice": 57986,
+      "salePrice": 14486,
+      "discountRate": 75,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP4389-PPSA04734_00-MXVSATV2021PS5US"
+    },
+    {
+      "id": "ps-UP1018-CUSA00133_00-BATMANARKHAMKNHT",
+      "title": "Batman™: Arkham Knight",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP1018/CUSA00133_00/due3Vp0T2VSGfBtGsWjVnrL4o882iYVk.png",
       "originalPrice": 28985,
       "salePrice": 7236,
       "discountRate": 75,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP2649-PPSA28662_00-0884514697841290"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP1018-CUSA00133_00-BATMANARKHAMKNHT"
+    },
+    {
+      "id": "ps-UP6758-PPSA03268_00-6401393671841114",
+      "title": "Disco Elysium - The Final Cut",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/1214/gcMVHVG82HnDo0A6WHl6WR6H.png",
+      "originalPrice": 57986,
+      "salePrice": 14486,
+      "discountRate": 75,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP6758-PPSA03268_00-6401393671841114"
+    },
+    {
+      "id": "ps-UP5245-PPSA02452_00-6063362694848820",
+      "title": "Subnautica PS4 & PS5",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/img/rnd/202009/3006/C76j3lYg8BNBWJRSYtI2ONbo.png",
+      "originalPrice": 43486,
+      "salePrice": 10861,
+      "discountRate": 75,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP5245-PPSA02452_00-6063362694848820"
+    },
+    {
+      "id": "ps-UP3024-PPSA15388_00-0636789504534087",
+      "title": "High On Life",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202305/3101/21b540176f9adb924f1396e89d406416fa2baa602b5e1492.png",
+      "originalPrice": 57986,
+      "salePrice": 14486,
+      "discountRate": 75,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP3024-PPSA15388_00-0636789504534087"
+    },
+    {
+      "id": "ps-UP0700-PPSA09536_00-JJTKCDLXEDITION0",
+      "title": "Jujutsu Kaisen Cursed Clash Deluxe Edition PS4 & PS5",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202401/1801/4332c127a23ce9ba5219f2b2e8015487ad6eb6f82ac4f408.png",
+      "originalPrice": 115985,
+      "salePrice": 28985,
+      "discountRate": 75,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA09536_00-JJTKCDLXEDITION0"
     },
     {
       "id": "ps-JP0101-PPSA21159_00-MAINGAME00000000",
@@ -1642,46 +1672,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0101-PPSA08710_00-MAINGAME00000000"
     },
     {
-      "id": "ps-UP2015-CUSA14409_00-CASTLECRASHERSNA",
-      "title": "Castle Crashers Remastered",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/img/cfn/113074Vkl96ZvqHrSjBTWNaDTiW8NseQkbb8DXD-3YK6okvE2AGl1-evtpyI7VP_QVcLZKNFp0Ea2GebTiHHaz1EvBsKAZAm.png",
-      "originalPrice": 21736,
-      "salePrice": 6511,
-      "discountRate": 70,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP2015-CUSA14409_00-CASTLECRASHERSNA"
-    },
-    {
-      "id": "ps-UP6646-PPSA15692_00-VOID257607767142",
-      "title": "Warhammer 40,000: Rogue Trader - Voidfarer Edition",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202311/2409/6ad6e6df96f96b16f936889b4a90e2f9c16d377a48afaace.png",
-      "originalPrice": 144986,
-      "salePrice": 43486,
-      "discountRate": 70,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP6646-PPSA15692_00-VOID257607767142"
-    },
-    {
-      "id": "ps-UP0240-CUSA10518_00-THEFOREST0000000",
-      "title": "THE FOREST",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP0240/CUSA10518_00/Zgjse2LA3r6ZknG2wN4FDAmUuZXwe09g.png",
-      "originalPrice": 28985,
-      "salePrice": 8686,
-      "discountRate": 70,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0240-CUSA10518_00-THEFOREST0000000"
-    },
-    {
-      "id": "ps-UP6646-PPSA15692_00-0445679437713264",
-      "title": "Warhammer 40,000: Rogue Trader",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202311/0910/ba5f818ad00d6aab095b209701e4997642987edde9e9b6fe.png",
-      "originalPrice": 72486,
-      "salePrice": 21736,
-      "discountRate": 70,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP6646-PPSA15692_00-0445679437713264"
-    },
-    {
       "id": "ps-UP0700-PPSA06981_00-NARUTOUNSADX0000",
       "title": "NARUTO X BORUTO Ultimate Ninja STORM CONNECTIONS Deluxe Edition PS4 & PS5",
       "platform": "PlayStation",
@@ -1692,14 +1682,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA06981_00-NARUTOUNSADX0000"
     },
     {
-      "id": "ps-UP0177-PPSA06888_00-SONICORION000000",
-      "title": "SONIC SUPERSTARS",
+      "id": "ps-UP0240-CUSA10518_00-THEFOREST0000000",
+      "title": "THE FOREST",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202307/2416/9fb7d209dbb62357ddd5c305f6019a97238fc1bd1b540560.png",
-      "originalPrice": 86986,
-      "salePrice": 26085,
+      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP0240/CUSA10518_00/Zgjse2LA3r6ZknG2wN4FDAmUuZXwe09g.png",
+      "originalPrice": 28985,
+      "salePrice": 8686,
       "discountRate": 70,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0177-PPSA06888_00-SONICORION000000"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0240-CUSA10518_00-THEFOREST0000000"
     },
     {
       "id": "ps-UP1980-PPSA06693_00-REM2ULTIMATE0000",
@@ -1722,14 +1712,44 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP4389-PPSA03308_00-WRECKFESTPS5US00"
     },
     {
-      "id": "ps-UP1063-PPSA17672_00-EDSEN3AND4BUNDLE",
-      "title": "The Legend of Heroes: Trails of Cold Steel III / The Legend of Heroes: Trails of Cold Steel IV",
+      "id": "ps-UP0177-PPSA06888_00-SONICORION000000",
+      "title": "SONIC SUPERSTARS",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202311/2822/c9722a4ff53f8a41eff729bf3791b61a60db8848af4b530b.png",
-      "originalPrice": 101485,
-      "salePrice": 35511,
-      "discountRate": 65,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP1063-PPSA17672_00-EDSEN3AND4BUNDLE"
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202307/2416/9fb7d209dbb62357ddd5c305f6019a97238fc1bd1b540560.png",
+      "originalPrice": 86986,
+      "salePrice": 26085,
+      "discountRate": 70,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0177-PPSA06888_00-SONICORION000000"
+    },
+    {
+      "id": "ps-UP2015-CUSA14409_00-CASTLECRASHERSNA",
+      "title": "Castle Crashers Remastered",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/img/cfn/113074Vkl96ZvqHrSjBTWNaDTiW8NseQkbb8DXD-3YK6okvE2AGl1-evtpyI7VP_QVcLZKNFp0Ea2GebTiHHaz1EvBsKAZAm.png",
+      "originalPrice": 21736,
+      "salePrice": 6511,
+      "discountRate": 70,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP2015-CUSA14409_00-CASTLECRASHERSNA"
+    },
+    {
+      "id": "ps-UB0511-PPSA25582_00-0885085162002695",
+      "title": "TMNT Splintered Fate - Platinum Edition",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1018/c00a42a2c33f20c424bc8929f38febf385c5fac8d5112e97.png",
+      "originalPrice": 68136,
+      "salePrice": 20431,
+      "discountRate": 70,
+      "dealUrl": "https://store.playstation.com/en-us/product/UB0511-PPSA25582_00-0885085162002695"
+    },
+    {
+      "id": "ps-UP4064-CUSA10940_00-OVERCOOKED200000",
+      "title": "Overcooked! 2",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP4064/CUSA10940_00/r0sQ8zaOheA7nh6k6pxzYMT41CnR42rF.png",
+      "originalPrice": 36236,
+      "salePrice": 12311,
+      "discountRate": 66,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP4064-CUSA10940_00-OVERCOOKED200000"
     },
     {
       "id": "ps-UP0002-CUSA12125_00-SPYROTRILOGY0001",
@@ -1740,6 +1760,26 @@ export const consoleDealSnapshot: {
       "salePrice": 20286,
       "discountRate": 65,
       "dealUrl": "https://store.playstation.com/en-us/product/UP0002-CUSA12125_00-SPYROTRILOGY0001"
+    },
+    {
+      "id": "ps-UP1063-PPSA17672_00-EDSEN3AND4BUNDLE",
+      "title": "The Legend of Heroes: Trails of Cold Steel III / The Legend of Heroes: Trails of Cold Steel IV",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202311/2822/c9722a4ff53f8a41eff729bf3791b61a60db8848af4b530b.png",
+      "originalPrice": 101485,
+      "salePrice": 35511,
+      "discountRate": 65,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP1063-PPSA17672_00-EDSEN3AND4BUNDLE"
+    },
+    {
+      "id": "ps-UP4389-PPSA15573_00-SOUTHPARKSNOWDAY",
+      "title": "SOUTH PARK: SNOW DAY!",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202312/0518/00462d6ee9a116df462ee1b7b271e382fd1124433893f1dc.png",
+      "originalPrice": 43486,
+      "salePrice": 15211,
+      "discountRate": 65,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP4389-PPSA15573_00-SOUTHPARKSNOWDAY"
     },
     {
       "id": "ps-UP4572-PPSA01768_00-0000000000000WOA",
@@ -1762,16 +1802,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0001-PPSA20396_00-EDITIONDELUXE000"
     },
     {
-      "id": "ps-EP2566-PPSA23770_00-REMATCH000000PS5",
-      "title": "REMATCH",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202412/1301/bf53eec311119801d096ef4c5e05ef0feb20c365e568e344.png",
-      "originalPrice": 43486,
-      "salePrice": 17386,
-      "discountRate": 60,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP2566-PPSA23770_00-REMATCH000000PS5"
-    },
-    {
       "id": "ps-UP2154-CUSA04794_00-GANGBEASTSPS04NA",
       "title": "Gang Beasts",
       "platform": "PlayStation",
@@ -1792,24 +1822,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/EP8388-PPSA19411_00-0263902067677063"
     },
     {
-      "id": "ps-UP4364-PPSA01746_00-KENAAMST00000005",
-      "title": "Kena: Bridge of Spirits PS4 & PS5",
+      "id": "ps-EP2566-PPSA23770_00-REMATCH000000PS5",
+      "title": "REMATCH",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/2307/kQzDCY5RCrSXCeeFjPGUzkGI.png",
-      "originalPrice": 57986,
-      "salePrice": 23186,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202412/1301/bf53eec311119801d096ef4c5e05ef0feb20c365e568e344.png",
+      "originalPrice": 43486,
+      "salePrice": 17386,
       "discountRate": 60,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4364-PPSA01746_00-KENAAMST00000005"
-    },
-    {
-      "id": "ps-UP0177-PPSA19461_00-SHINOBIAOVDX0001",
-      "title": "SHINOBI: Art of Vengeance Digital Deluxe Edition PS4 & PS5",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/0821/003f39122144ac393805be50afd803912ebd3b00c6935550.png",
-      "originalPrice": 57986,
-      "salePrice": 23186,
-      "discountRate": 60,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0177-PPSA19461_00-SHINOBIAOVDX0001"
+      "dealUrl": "https://store.playstation.com/en-us/product/EP2566-PPSA23770_00-REMATCH000000PS5"
     },
     {
       "id": "ps-JP0177-PPSA31334_00-YAKUZACOMPLETE00",
@@ -1822,24 +1842,34 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/JP0177-PPSA31334_00-YAKUZACOMPLETE00"
     },
     {
-      "id": "ps-UP4364-PPSA01746_00-KENAAMDD00000005",
-      "title": "Kena: Bridge of Spirits Digital Deluxe PS4 & PS5",
+      "id": "ps-UP1023-PPSA29154_00-DXMTSFULLGAME000",
+      "title": "Daemon X Machina: Titanic Scion",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/2307/kQzDCY5RCrSXCeeFjPGUzkGI.png",
-      "originalPrice": 72486,
-      "salePrice": 28985,
-      "discountRate": 60,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4364-PPSA01746_00-KENAAMDD00000005"
-    },
-    {
-      "id": "ps-UP0082-PPSA07809_00-CRISISCORE000DDX",
-      "title": "CRISIS CORE –FINAL FANTASY VII– REUNION DIGITAL DELUXE EDITION PS4 & PS5",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202209/1205/iFuMVOoaY5seRfDSLBcugByv.png",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/0921/f2c3c9bfc07c4a9d923ecb4d1e0311966138fbb4dd702247.png",
       "originalPrice": 101485,
       "salePrice": 40586,
       "discountRate": 60,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0082-PPSA07809_00-CRISISCORE000DDX"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP1023-PPSA29154_00-DXMTSFULLGAME000"
+    },
+    {
+      "id": "ps-UP4364-PPSA01746_00-KENAAMST00000005",
+      "title": "Kena: Bridge of Spirits PS4 & PS5",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/2307/kQzDCY5RCrSXCeeFjPGUzkGI.png",
+      "originalPrice": 57986,
+      "salePrice": 23186,
+      "discountRate": 60,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP4364-PPSA01746_00-KENAAMST00000005"
+    },
+    {
+      "id": "ps-UP6312-PPSA15547_00-OGUNQUIT00000000",
+      "title": "Grounded PS4® & PS5®",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202404/1120/64a12b89992b8e34ecace3e5c7d1d39b954c2ab1d73de70a.png",
+      "originalPrice": 57986,
+      "salePrice": 23186,
+      "discountRate": 60,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP6312-PPSA15547_00-OGUNQUIT00000000"
     },
     {
       "id": "ps-UP9000-PPSA08329_00-GOWRAGNAROK00000",
@@ -1872,6 +1902,26 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP9000-PPSA01411_00-MARVELSSMMDDE000"
     },
     {
+      "id": "ps-UP9000-PPSA13428_00-HORIZONREMASTER1",
+      "title": "Horizon Zero Dawn™ Remastered",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202409/2716/16b33fa9a5c7285ba86a035b4a1c5f8eb430b407eae35ffd.png",
+      "originalPrice": 72486,
+      "salePrice": 30435,
+      "discountRate": 58,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP9000-PPSA13428_00-HORIZONREMASTER1"
+    },
+    {
+      "id": "ps-UP9000-PPSA04539_00-RONINFULLGAME001",
+      "title": "Rise of the Ronin™",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202312/0606/c7af83ff86dd8668568ad6583341ddb1d0c142535b491383.png",
+      "originalPrice": 101485,
+      "salePrice": 42616,
+      "discountRate": 58,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP9000-PPSA04539_00-RONINFULLGAME001"
+    },
+    {
       "id": "ps-UP1001-PPSA35889_00-NBA2K27SUPERED00",
       "title": "NBA 2K27 Deluxe Edition",
       "platform": "PlayStation",
@@ -1880,16 +1930,6 @@ export const consoleDealSnapshot: {
       "salePrice": 65236,
       "discountRate": 55,
       "dealUrl": "https://store.playstation.com/en-us/product/UP1001-PPSA35889_00-NBA2K27SUPERED00"
-    },
-    {
-      "id": "ps-EP4361-PPSA16033_00-0158231446437401",
-      "title": "The Alters",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202502/2515/ed6ddbde049f0d584a91e8a55720f780c1fee09fd73ad210.png",
-      "originalPrice": 50736,
-      "salePrice": 22823,
-      "discountRate": 55,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP4361-PPSA16033_00-0158231446437401"
     },
     {
       "id": "ps-UP0006-PPSA34015_00-27STANDARDBUNDLE",
@@ -1932,6 +1972,16 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP4497-PPSA03974_00-EXPANSION1B00000"
     },
     {
+      "id": "ps-UP9000-CUSA07408_00-00000000GODOFWAR",
+      "title": "God of War",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/img/rnd/202011/1021/X3WIAh63yKhRRiMohLoJMeQu.png",
+      "originalPrice": 28985,
+      "salePrice": 14486,
+      "discountRate": 50,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP9000-CUSA07408_00-00000000GODOFWAR"
+    },
+    {
       "id": "ps-UP2739-CUSA15510_00-DAYZ000000000001",
       "title": "DayZ",
       "platform": "PlayStation",
@@ -1972,14 +2022,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP2470-PPSA02100_00-STRAYSIEA0000000"
     },
     {
-      "id": "ps-UP2739-CUSA15510_00-DAYZDLC000000002",
-      "title": "DayZ Frostline",
+      "id": "ps-UP1001-PPSA14251_00-MAFIAOMERTACOLL0",
+      "title": "Mafia: The Omertà Collection",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/0509/5fd2ea6a656de40084cbe669cce0118e993dc64a597ba561.png",
-      "originalPrice": 39136,
-      "salePrice": 19561,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2420/5f73b185c4ab1d5d412f95c921d636aeae159d6c38a9168d.png",
+      "originalPrice": 144986,
+      "salePrice": 72486,
       "discountRate": 50,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP2739-CUSA15510_00-DAYZDLC000000002"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP1001-PPSA14251_00-MAFIAOMERTACOLL0"
     },
     {
       "id": "ps-UP0700-CUSA01760_00-DARKSOULS2000003",
@@ -1992,6 +2042,16 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0700-CUSA01760_00-DARKSOULS2000003"
     },
     {
+      "id": "ps-UP2739-CUSA15510_00-DAYZDLC000000002",
+      "title": "DayZ Frostline",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/0509/5fd2ea6a656de40084cbe669cce0118e993dc64a597ba561.png",
+      "originalPrice": 39136,
+      "salePrice": 19561,
+      "discountRate": 50,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP2739-CUSA15510_00-DAYZDLC000000002"
+    },
+    {
       "id": "ps-UP3509-PPSA02048_00-CHAPTERYERKES000",
       "title": "Dead by Daylight: Chucky Chapter",
       "platform": "PlayStation",
@@ -2000,26 +2060,6 @@ export const consoleDealSnapshot: {
       "salePrice": 3611,
       "discountRate": 50,
       "dealUrl": "https://store.playstation.com/en-us/product/UP3509-PPSA02048_00-CHAPTERYERKES000"
-    },
-    {
-      "id": "ps-UP9000-CUSA07408_00-00000000GODOFWAR",
-      "title": "God of War",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/img/rnd/202011/1021/X3WIAh63yKhRRiMohLoJMeQu.png",
-      "originalPrice": 28985,
-      "salePrice": 14486,
-      "discountRate": 50,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP9000-CUSA07408_00-00000000GODOFWAR"
-    },
-    {
-      "id": "ps-UP3024-PPSA15388_00-0664193101612094",
-      "title": "High On Life: High On Knife",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/0623/df24cc1f3b6fe0d84989a7651420346913850ad39d2a4cc9.png",
-      "originalPrice": 21736,
-      "salePrice": 10861,
-      "discountRate": 50,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP3024-PPSA15388_00-0664193101612094"
     },
     {
       "id": "ps-UP0700-CUSA03388_00-DARKSOULS3DELUXE",
@@ -2032,14 +2072,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0700-CUSA03388_00-DARKSOULS3DELUXE"
     },
     {
-      "id": "ps-UP1001-PPSA14251_00-MAFIAOMERTACOLL0",
-      "title": "Mafia: The Omertà Collection",
+      "id": "ps-UP9000-CUSA00552_00-THELASTOFUS00000",
+      "title": "The Last Of Us™ Remastered",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2420/5f73b185c4ab1d5d412f95c921d636aeae159d6c38a9168d.png",
-      "originalPrice": 144986,
-      "salePrice": 72486,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/img/rnd/202011/1020/FKgazVvG7BcWouCr39mIiXkW.png",
+      "originalPrice": 28985,
+      "salePrice": 14486,
       "discountRate": 50,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP1001-PPSA14251_00-MAFIAOMERTACOLL0"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP9000-CUSA00552_00-THELASTOFUS00000"
     },
     {
       "id": "ps-UP3501-CUSA08661_00-THCOTWSROCKIEDLC",
@@ -2072,14 +2112,24 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP3501-CUSA08661_00-THCOTWSIBERIADLC"
     },
     {
-      "id": "ps-UP3501-CUSA08661_00-THCOTWTEAWAROA00",
-      "title": "theHunter: Call of the Wild™ - Te Awaroa National Park",
+      "id": "ps-UP3024-PPSA15388_00-0664193101612094",
+      "title": "High On Life: High On Knife",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202101/2512/x0VzoSFmxZZHlwvtOWWMdNJn.png",
-      "originalPrice": 11586,
-      "salePrice": 5786,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/0623/df24cc1f3b6fe0d84989a7651420346913850ad39d2a4cc9.png",
+      "originalPrice": 21736,
+      "salePrice": 10861,
       "discountRate": 50,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP3501-CUSA08661_00-THCOTWTEAWAROA00"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP3024-PPSA15388_00-0664193101612094"
+    },
+    {
+      "id": "ps-UP0700-PPSA23909_00-MAINGAME00000000",
+      "title": "CODE VEIN II",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/2820/8b05429bbbc560bda063f7190ada881888db6e6aa8ed0b30.png",
+      "originalPrice": 101485,
+      "salePrice": 50736,
+      "discountRate": 50,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA23909_00-MAINGAME00000000"
     },
     {
       "id": "ps-EP4108-PPSA32785_00-NIOH3DDX00000000",
@@ -2102,16 +2152,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0006-PPSA19534_00-SANTIAGODELUXE00"
     },
     {
-      "id": "ps-UP2139-CUSA06239_00-JBGPARTYPACK3PS4",
-      "title": "The Jackbox Party Pack 3",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP2139/CUSA06239_00/bXAFz5na1486F5VpvkNtUTltNlzDM41d.png",
-      "originalPrice": 36236,
-      "salePrice": 19923,
-      "discountRate": 45,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP2139-CUSA06239_00-JBGPARTYPACK3PS4"
-    },
-    {
       "id": "ps-UP0700-PPSA10595_00-TK8ADVEDITION000",
       "title": "TEKKEN 8 Advanced Edition",
       "platform": "PlayStation",
@@ -2122,6 +2162,46 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA10595_00-TK8ADVEDITION000"
     },
     {
+      "id": "ps-UP2139-CUSA06239_00-JBGPARTYPACK3PS4",
+      "title": "The Jackbox Party Pack 3",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP2139/CUSA06239_00/bXAFz5na1486F5VpvkNtUTltNlzDM41d.png",
+      "originalPrice": 36236,
+      "salePrice": 19923,
+      "discountRate": 45,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP2139-CUSA06239_00-JBGPARTYPACK3PS4"
+    },
+    {
+      "id": "ps-UP2139-PPSA02134_00-JBGPARTYPACK7PS5",
+      "title": "The Jackbox Party Pack 7",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202009/1519/LXY0uy0YeJS0GsBiVTyEM9jJ.png",
+      "originalPrice": 43486,
+      "salePrice": 23910,
+      "discountRate": 45,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP2139-PPSA02134_00-JBGPARTYPACK7PS5"
+    },
+    {
+      "id": "ps-UP1564-PPSA25775_00-CLABSCBP20240828",
+      "title": "Contraband Police",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1111/43a4aa05b45a4cebedc4d4cc4692c8a8263c007d213b0b72.png",
+      "originalPrice": 43486,
+      "salePrice": 23910,
+      "discountRate": 45,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP1564-PPSA25775_00-CLABSCBP20240828"
+    },
+    {
+      "id": "ps-UP2139-PPSA07636_00-JBGPARTYPACK9PS5",
+      "title": "The Jackbox Party Pack 9",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202209/1316/2ayccju5K4s34wCqv7R4GOoM.png",
+      "originalPrice": 43486,
+      "salePrice": 23910,
+      "discountRate": 45,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP2139-PPSA07636_00-JBGPARTYPACK9PS5"
+    },
+    {
       "id": "ps-JP9000-PPSA02015_00-DS2OTB0000000001",
       "title": "DEATH STRANDING 2: ON THE BEACH",
       "platform": "PlayStation",
@@ -2130,26 +2210,6 @@ export const consoleDealSnapshot: {
       "salePrice": 57841,
       "discountRate": 43,
       "dealUrl": "https://store.playstation.com/en-us/product/JP9000-PPSA02015_00-DS2OTB0000000001"
-    },
-    {
-      "id": "ps-EP1470-PPSA28311_00-ABSOLUMDOTEMUPS5",
-      "title": "Absolum",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/1316/8d3bfb88ab72525a9084ed3ce6d4a8e5527b58491a4bd251.png",
-      "originalPrice": 36236,
-      "salePrice": 21736,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP1470-PPSA28311_00-ABSOLUMDOTEMUPS5"
-    },
-    {
-      "id": "ps-UP8103-PPSA25063_00-POPPYCHAPTERFOUR",
-      "title": "Poppy Playtime: Chapter 4",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/2714/d7c627f0eea57ea147e8e209553e9167c3052ab3444f1a89.png",
-      "originalPrice": 28985,
-      "salePrice": 17386,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP8103-PPSA25063_00-POPPYCHAPTERFOUR"
     },
     {
       "id": "ps-UP4432-CUSA00224_00-UU00990000000000",
@@ -2172,16 +2232,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA08084_00-DBZKTSEASONPASS3"
     },
     {
-      "id": "ps-UP4432-CUSA00224_00-UU02160000000000",
-      "title": "War Thunder - T58 Heavy Tank Pack",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2707/c6f9fa762d54f00d90b72b79b663e0887ae2e658c9dd379a.png",
-      "originalPrice": 72486,
-      "salePrice": 43486,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU02160000000000"
-    },
-    {
       "id": "ps-JP0101-PPSA15304_00-SNAKEEATERDELUXE",
       "title": "METAL GEAR SOLID Δ: SNAKE EATER Digital Deluxe Edition",
       "platform": "PlayStation",
@@ -2190,6 +2240,16 @@ export const consoleDealSnapshot: {
       "salePrice": 52186,
       "discountRate": 40,
       "dealUrl": "https://store.playstation.com/en-us/product/JP0101-PPSA15304_00-SNAKEEATERDELUXE"
+    },
+    {
+      "id": "ps-EP1470-PPSA28311_00-ABSOLUMDOTEMUPS5",
+      "title": "Absolum",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/1316/8d3bfb88ab72525a9084ed3ce6d4a8e5527b58491a4bd251.png",
+      "originalPrice": 36236,
+      "salePrice": 21736,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/EP1470-PPSA28311_00-ABSOLUMDOTEMUPS5"
     },
     {
       "id": "ps-UP4432-CUSA00224_00-UU01270000000000",
@@ -2202,26 +2262,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU01270000000000"
     },
     {
-      "id": "ps-UP1004-CUSA03507_00-SLUS212690000001",
-      "title": "Bully",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/0702/0a80a4bca3be19ae1bd7b50a50121df84b7e546642233b54.png",
-      "originalPrice": 21736,
-      "salePrice": 13036,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP1004-CUSA03507_00-SLUS212690000001"
-    },
-    {
-      "id": "ps-UP0082-CUSA05933_00-KINGDOMHEART1525",
-      "title": "KINGDOM HEARTS HD 1.5 +2.5 ReMIX",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP0082/CUSA05933_00/Mcd5L82dShQ7n5zWfBVNKMAfPgl1kkSz.png",
-      "originalPrice": 57986,
-      "salePrice": 34786,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0082-CUSA05933_00-KINGDOMHEART1525"
-    },
-    {
       "id": "ps-UP4432-CUSA00224_00-UU02380000000000",
       "title": "War Thunder - Su-30MKK (China) Pack",
       "platform": "PlayStation",
@@ -2230,86 +2270,6 @@ export const consoleDealSnapshot: {
       "salePrice": 69586,
       "discountRate": 40,
       "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU02380000000000"
-    },
-    {
-      "id": "ps-UP0101-PPSA14363_00-MGSCOLLECTION001",
-      "title": "METAL GEAR SOLID: MASTER COLLECTION Vol.1 PS4 & PS5",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202304/2815/11d0dbc5e72685640d62c9848170615d220d91d690181b82.png",
-      "originalPrice": 86986,
-      "salePrice": 52186,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0101-PPSA14363_00-MGSCOLLECTION001"
-    },
-    {
-      "id": "ps-UP4432-CUSA00224_00-UU01340000000000",
-      "title": "War Thunder - M1 KVT Pack",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2213/08856f5ac81507b60b8aba3495e432a2cab99e7632822c36.png",
-      "originalPrice": 94235,
-      "salePrice": 56536,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU01340000000000"
-    },
-    {
-      "id": "ps-UP0700-PPSA23909_00-CHRNSULTEDITION0",
-      "title": "CODE VEIN II Ultimate Edition",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2418/0ad97b6967273e9b6c4143c2bf799addbe700bb943e14667.png",
-      "originalPrice": 144986,
-      "salePrice": 86986,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA23909_00-CHRNSULTEDITION0"
-    },
-    {
-      "id": "ps-UP4432-CUSA00224_00-UU02360000000000",
-      "title": "War Thunder - BMPT-72 Pack",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/2616/1eb1951d70eb86064f9096444baa1ea63562e286ac7f2fef.png",
-      "originalPrice": 101485,
-      "salePrice": 60886,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU02360000000000"
-    },
-    {
-      "id": "ps-EP0001-PPSA23559_00-ANNO117GOLD00000",
-      "title": "Anno 117: Pax Romana Gold Edition",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1323/b3e0ed0dcb2c92f966a7b99c63523c2c404d7327226d4099.png",
-      "originalPrice": 130485,
-      "salePrice": 78286,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP0001-PPSA23559_00-ANNO117GOLD00000"
-    },
-    {
-      "id": "ps-JP7907-PPSA21837_00-LOLLIPCHAINREPOP",
-      "title": "LOLLIPOP CHAINSAW RePOP",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202407/0911/dfcd6f4d5a8b74fa11c7b3cb6f7a55aa0e54943a66dda85c.png",
-      "originalPrice": 65236,
-      "salePrice": 39136,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/JP7907-PPSA21837_00-LOLLIPCHAINREPOP"
-    },
-    {
-      "id": "ps-EP1470-PPSA32559_00-0311398312658520",
-      "title": "Abyssus",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2915/48c1f74a883f8c46eb4cd8987cc833a983edcbf6ba06c2ee.png",
-      "originalPrice": 36236,
-      "salePrice": 21736,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP1470-PPSA32559_00-0311398312658520"
-    },
-    {
-      "id": "ps-EP0001-PPSA23559_00-LS00000000000117",
-      "title": "Anno 117: Pax Romana",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2909/bccce75aad9ffcb91287e7e7e90188144bc16871aede43d1.png",
-      "originalPrice": 86986,
-      "salePrice": 52186,
-      "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP0001-PPSA23559_00-LS00000000000117"
     },
     {
       "id": "ps-UP0002-PPSA02442_00-DIVBASEGAME00000",
@@ -2322,34 +2282,94 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0002-PPSA02442_00-DIVBASEGAME00000"
     },
     {
-      "id": "ps-UP1004-CUSA03513_00-SLUS202300000001",
-      "title": "Max Payne®",
+      "id": "ps-UP1004-CUSA03507_00-SLUS212690000001",
+      "title": "Bully",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP1004/CUSA03513_00/lrHNhklky2FFYSfvCDjUtRH5AphkmwYk.png",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/0702/0a80a4bca3be19ae1bd7b50a50121df84b7e546642233b54.png",
       "originalPrice": 21736,
       "salePrice": 13036,
       "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP1004-CUSA03513_00-SLUS202300000001"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP1004-CUSA03507_00-SLUS212690000001"
     },
     {
-      "id": "ps-UP4432-CUSA00224_00-UU01980000000000",
-      "title": "War Thunder - MiG-29 Sniper Pack",
+      "id": "ps-UP0101-PPSA14363_00-MGSCOLLECTION001",
+      "title": "METAL GEAR SOLID: MASTER COLLECTION Vol.1 PS4 & PS5",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/1915/bfbd32281c962c88149cdb20080a4e950d210be64a952a2b.png",
-      "originalPrice": 115985,
-      "salePrice": 69586,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202304/2815/11d0dbc5e72685640d62c9848170615d220d91d690181b82.png",
+      "originalPrice": 86986,
+      "salePrice": 52186,
       "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU01980000000000"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0101-PPSA14363_00-MGSCOLLECTION001"
     },
     {
-      "id": "ps-UP4432-CUSA00224_00-UU00070000000000",
-      "title": "War Thunder - King Tiger",
+      "id": "ps-UP4432-CUSA00224_00-UU02160000000000",
+      "title": "War Thunder - T58 Heavy Tank Pack",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202011/1915/NengYyEqQv84qTMtKfTkPRDl.png",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2707/c6f9fa762d54f00d90b72b79b663e0887ae2e658c9dd379a.png",
+      "originalPrice": 72486,
+      "salePrice": 43486,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU02160000000000"
+    },
+    {
+      "id": "ps-UP0082-CUSA05933_00-KINGDOMHEART1525",
+      "title": "KINGDOM HEARTS HD 1.5 +2.5 ReMIX",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP0082/CUSA05933_00/Mcd5L82dShQ7n5zWfBVNKMAfPgl1kkSz.png",
       "originalPrice": 57986,
       "salePrice": 34786,
       "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU00070000000000"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0082-CUSA05933_00-KINGDOMHEART1525"
+    },
+    {
+      "id": "ps-UP4432-CUSA00224_00-UU02360000000000",
+      "title": "War Thunder - BMPT-72 Pack",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/2616/1eb1951d70eb86064f9096444baa1ea63562e286ac7f2fef.png",
+      "originalPrice": 101485,
+      "salePrice": 60886,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU02360000000000"
+    },
+    {
+      "id": "ps-UP0700-PPSA23909_00-CHRNSULTEDITION0",
+      "title": "CODE VEIN II Ultimate Edition",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2418/0ad97b6967273e9b6c4143c2bf799addbe700bb943e14667.png",
+      "originalPrice": 144986,
+      "salePrice": 86986,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA23909_00-CHRNSULTEDITION0"
+    },
+    {
+      "id": "ps-UP0101-CUSA05610_00-MAINGAME00000000",
+      "title": "METAL GEAR SOLID V: THE DEFINITIVE EXPERIENCE",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202010/0205/xaOrA7ZIur35LkfIzxtOECFv.png",
+      "originalPrice": 28985,
+      "salePrice": 17386,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0101-CUSA05610_00-MAINGAME00000000"
+    },
+    {
+      "id": "ps-JP7907-PPSA21837_00-LOLLIPCHAINREPOP",
+      "title": "LOLLIPOP CHAINSAW RePOP",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202407/0911/dfcd6f4d5a8b74fa11c7b3cb6f7a55aa0e54943a66dda85c.png",
+      "originalPrice": 65236,
+      "salePrice": 39136,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/JP7907-PPSA21837_00-LOLLIPCHAINREPOP"
+    },
+    {
+      "id": "ps-UP8103-PPSA25063_00-POPPYCHAPTERFOUR",
+      "title": "Poppy Playtime: Chapter 4",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/2714/d7c627f0eea57ea147e8e209553e9167c3052ab3444f1a89.png",
+      "originalPrice": 28985,
+      "salePrice": 17386,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP8103-PPSA25063_00-POPPYCHAPTERFOUR"
     },
     {
       "id": "ps-UP8103-PPSA22380_00-0674240917583209",
@@ -2362,14 +2382,74 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP8103-PPSA22380_00-0674240917583209"
     },
     {
-      "id": "ps-UP4432-CUSA00224_00-UU01060000000000",
-      "title": "War Thunder - Su-25K",
+      "id": "ps-UP1001-PPSA14251_00-MTOCDEFINITIVE00",
+      "title": "Mafia: The Old Country Definitive Edition",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1414/9x6jwgpKhMVYN7W4YgeBXabG.png",
-      "originalPrice": 86986,
-      "salePrice": 52186,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2422/14457289294c196eb01a69e8b774f4054b0c6bb2515efcf0.png",
+      "originalPrice": 94235,
+      "salePrice": 56536,
       "discountRate": 40,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU01060000000000"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP1001-PPSA14251_00-MTOCDEFINITIVE00"
+    },
+    {
+      "id": "ps-UP2712-CUSA29953_00-9367204981826190",
+      "title": "Bloons TD 6",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202311/2622/4a8ee6333f65a7dd48f0061616699b6e3c06bea48efd904c.png",
+      "originalPrice": 43486,
+      "salePrice": 26085,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP2712-CUSA29953_00-9367204981826190"
+    },
+    {
+      "id": "ps-JP0082-PPSA28492_00-OCTOPATH000PS5JP",
+      "title": "OCTOPATH TRAVELER 0 PS4 & PS5",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/2109/6eb9221ab73f97643997949976e2e13f374ed79e4e244060.png",
+      "originalPrice": 72486,
+      "salePrice": 43486,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/JP0082-PPSA28492_00-OCTOPATH000PS5JP"
+    },
+    {
+      "id": "ps-UP4432-CUSA00224_00-UU01340000000000",
+      "title": "War Thunder - M1 KVT Pack",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2213/08856f5ac81507b60b8aba3495e432a2cab99e7632822c36.png",
+      "originalPrice": 94235,
+      "salePrice": 56536,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP4432-CUSA00224_00-UU01340000000000"
+    },
+    {
+      "id": "ps-EP0001-PPSA23559_00-ANNO117GOLD00000",
+      "title": "Anno 117: Pax Romana Gold Edition",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1323/b3e0ed0dcb2c92f966a7b99c63523c2c404d7327226d4099.png",
+      "originalPrice": 130485,
+      "salePrice": 78286,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/EP0001-PPSA23559_00-ANNO117GOLD00000"
+    },
+    {
+      "id": "ps-EP6959-PPSA17732_00-0265718801274251",
+      "title": "The Precinct",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202503/2521/d1be010b0cd9dd37ceb1bfb165f5fab07dab37d26a6f8066.png",
+      "originalPrice": 43486,
+      "salePrice": 26085,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/EP6959-PPSA17732_00-0265718801274251"
+    },
+    {
+      "id": "ps-UP0700-PPSA26175_00-MHAAJDLXEDITION0",
+      "title": "MY HERO ACADEMIA: All’s Justice - Deluxe Edition",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/1018/113b89c9debae0ca7e4085e0ddfe4b7151abbcdf2d8d858c.png",
+      "originalPrice": 115985,
+      "salePrice": 69586,
+      "discountRate": 40,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA26175_00-MHAAJDLXEDITION0"
     },
     {
       "id": "ps-UP3589-PPSA37141_00-0242307590850633",
@@ -2382,6 +2462,16 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP3589-PPSA37141_00-0242307590850633"
     },
     {
+      "id": "ps-UP3501-CUSA08661_00-HUNTINGPROPACK25",
+      "title": "theHunter: Call of the Wild™ - Hunting Pro Pack (2025)",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1309/f9aed0de70c54171d1c8e1b4ba27714f13dad57bcd856568.png",
+      "originalPrice": 65236,
+      "salePrice": 42398,
+      "discountRate": 35,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP3501-CUSA08661_00-HUNTINGPROPACK25"
+    },
+    {
       "id": "ps-UP0001-PPSA20396_00-DLCEXPANSION0001",
       "title": "Claws of Awaji - Assassin's Creed Shadows",
       "platform": "PlayStation",
@@ -2392,14 +2482,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0001-PPSA20396_00-DLCEXPANSION0001"
     },
     {
-      "id": "ps-UP3501-CUSA08661_00-HUNTINGPROPACK25",
-      "title": "theHunter: Call of the Wild™ - Hunting Pro Pack (2025)",
+      "id": "ps-UP8268-PPSA14410_00-PAYDAY3FULLGAME0",
+      "title": "PAYDAY 3",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1309/f9aed0de70c54171d1c8e1b4ba27714f13dad57bcd856568.png",
-      "originalPrice": 65236,
-      "salePrice": 42398,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202609/2219/822a270cc5cfc6459d83fe81fb5014fe4cfb83741b3f031c.png",
+      "originalPrice": 43486,
+      "salePrice": 28260,
       "discountRate": 35,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP3501-CUSA08661_00-HUNTINGPROPACK25"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP8268-PPSA14410_00-PAYDAY3FULLGAME0"
     },
     {
       "id": "ps-UP9000-PPSA21564_00-0000000000000000",
@@ -2412,6 +2502,16 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP9000-PPSA21564_00-0000000000000000"
     },
     {
+      "id": "ps-UP9000-PPSA17905_00-HFWCE00000000000",
+      "title": "Horizon Forbidden West™ Complete Edition",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/2015/7c170d967a56776d9e1dc5ebaf45fefccbe9f12ef3fc752e.png",
+      "originalPrice": 86986,
+      "salePrice": 57406,
+      "discountRate": 34,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP9000-PPSA17905_00-HFWCE00000000000"
+    },
+    {
       "id": "ps-UP3893-CUSA08801_00-TFSHVCUTPS400084",
       "title": "Undertale",
       "platform": "PlayStation",
@@ -2422,14 +2522,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP3893-CUSA08801_00-TFSHVCUTPS400084"
     },
     {
-      "id": "ps-UP9000-PPSA17905_00-HFWCE00000000000",
-      "title": "Horizon Forbidden West™ Complete Edition",
+      "id": "ps-UP3526-PPSA14001_00-0681576713225017",
+      "title": "Baldur's Gate 3 - Digital Deluxe Edition",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/2015/7c170d967a56776d9e1dc5ebaf45fefccbe9f12ef3fc752e.png",
-      "originalPrice": 86986,
-      "salePrice": 57406,
-      "discountRate": 34,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP9000-PPSA17905_00-HFWCE00000000000"
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202308/2413/968ed1401bf14df79ac0af83e41cfe1f41dd06dec1ecd6bd.png",
+      "originalPrice": 115985,
+      "salePrice": 81186,
+      "discountRate": 30,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP3526-PPSA14001_00-0681576713225017"
     },
     {
       "id": "ps-EP1833-PPSA02391_00-DADELUXEEDITION0",
@@ -2442,14 +2542,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/EP1833-PPSA02391_00-DADELUXEEDITION0"
     },
     {
-      "id": "ps-UP3526-PPSA14001_00-0681576713225017",
-      "title": "Baldur's Gate 3 - Digital Deluxe Edition",
+      "id": "ps-EP0006-PPSA23566_00-ULTIMATEEDITION0",
+      "title": "UFC® 6 Ultimate Edition",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202308/2413/968ed1401bf14df79ac0af83e41cfe1f41dd06dec1ecd6bd.png",
-      "originalPrice": 115985,
-      "salePrice": 81186,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2217/981396baf68ab59a8d000a6bdfdd1bd7891e06332bc16d36.png",
+      "originalPrice": 144986,
+      "salePrice": 101485,
       "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP3526-PPSA14001_00-0681576713225017"
+      "dealUrl": "https://store.playstation.com/en-us/product/EP0006-PPSA23566_00-ULTIMATEEDITION0"
     },
     {
       "id": "ps-UP0102-PPSA30803_00-REREQUIEMDX00000",
@@ -2472,14 +2572,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP7455-PPSA34939_00-0000583083528246"
     },
     {
-      "id": "ps-EP0006-PPSA23566_00-ULTIMATEEDITION0",
-      "title": "UFC® 6 Ultimate Edition",
+      "id": "ps-EP7789-PPSA09030_00-5648706170853559",
+      "title": "Phasmophobia",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2217/981396baf68ab59a8d000a6bdfdd1bd7891e06332bc16d36.png",
-      "originalPrice": 144986,
-      "salePrice": 101485,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1214/9ec3be8acd540e2f84e7362cb492e8d53b93e8a7bea4cd5f.png",
+      "originalPrice": 28985,
+      "salePrice": 20286,
       "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP0006-PPSA23566_00-ULTIMATEEDITION0"
+      "dealUrl": "https://store.playstation.com/en-us/product/EP7789-PPSA09030_00-5648706170853559"
     },
     {
       "id": "ps-EP2601-PPSA24605_00-0538909601464686",
@@ -2490,16 +2590,6 @@ export const consoleDealSnapshot: {
       "salePrice": 40586,
       "discountRate": 30,
       "dealUrl": "https://store.playstation.com/en-us/product/EP2601-PPSA24605_00-0538909601464686"
-    },
-    {
-      "id": "ps-UP2456-CUSA06840_00-STARDEW00000SIEA",
-      "title": "Stardew Valley",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP2456/CUSA06840_00/0WuZecPtRr7aEsQPv2nJqiPa2ZvDOpYm.png",
-      "originalPrice": 21736,
-      "salePrice": 15211,
-      "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP2456-CUSA06840_00-STARDEW00000SIEA"
     },
     {
       "id": "ps-UP4572-PPSA01768_00-H3TRILOGYPREMIUM",
@@ -2522,16 +2612,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/JP0700-PPSA22969_00-SWORDARTONLINEV0"
     },
     {
-      "id": "ps-UP0082-PPSA32193_00-MILLENNIUMTALEUP",
-      "title": "The Adventures of Elliot: The Millennium Tales",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/1912/9cddb60efc374d029ced0e159d1db065b48b79e0fc63a704.png",
-      "originalPrice": 86986,
-      "salePrice": 60886,
-      "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0082-PPSA32193_00-MILLENNIUMTALEUP"
-    },
-    {
       "id": "ps-UP4664-PPSA16634_00-SATISFACTORYGAME",
       "title": "Satisfactory",
       "platform": "PlayStation",
@@ -2540,26 +2620,6 @@ export const consoleDealSnapshot: {
       "salePrice": 40586,
       "discountRate": 30,
       "dealUrl": "https://store.playstation.com/en-us/product/UP4664-PPSA16634_00-SATISFACTORYGAME"
-    },
-    {
-      "id": "ps-EP1833-PPSA02391_00-DELUXEEDITIONUPG",
-      "title": "Dune: Awakening - Deluxe Edition Upgrade",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202609/0411/6e10133000131c58c0c152f126ccd96c96d2bd78d9d6bcf8.png",
-      "originalPrice": 28985,
-      "salePrice": 20286,
-      "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP1833-PPSA02391_00-DELUXEEDITIONUPG"
-    },
-    {
-      "id": "ps-UP8721-PPSA28482_00-0554230075144894",
-      "title": "Holdfast: Nations At War",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1009/75fdd3d94771dd4972ebee686362f62f951241394fa40705.png",
-      "originalPrice": 28985,
-      "salePrice": 20286,
-      "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP8721-PPSA28482_00-0554230075144894"
     },
     {
       "id": "ps-EB0236-PPSA28336_00-0821195195639920",
@@ -2572,34 +2632,34 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/EB0236-PPSA28336_00-0821195195639920"
     },
     {
-      "id": "ps-EP7789-PPSA09030_00-5648706170853559",
-      "title": "Phasmophobia",
+      "id": "ps-UP2456-CUSA06840_00-STARDEW00000SIEA",
+      "title": "Stardew Valley",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1214/9ec3be8acd540e2f84e7362cb492e8d53b93e8a7bea4cd5f.png",
+      "thumbnailUrl": "https://image.api.playstation.com/cdn/UP2456/CUSA06840_00/0WuZecPtRr7aEsQPv2nJqiPa2ZvDOpYm.png",
+      "originalPrice": 21736,
+      "salePrice": 15211,
+      "discountRate": 30,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP2456-CUSA06840_00-STARDEW00000SIEA"
+    },
+    {
+      "id": "ps-JP0106-PPSA15972_00-DWORIGINSGAME000",
+      "title": "DYNASTY WARRIORS: ORIGINS",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202410/3101/2ba9c1b910e2d5544ffa9d2dc648bf5c16008e4244e4b5f2.png",
+      "originalPrice": 101485,
+      "salePrice": 71036,
+      "discountRate": 30,
+      "dealUrl": "https://store.playstation.com/en-us/product/JP0106-PPSA15972_00-DWORIGINSGAME000"
+    },
+    {
+      "id": "ps-EP1833-PPSA02391_00-DELUXEEDITIONUPG",
+      "title": "Dune: Awakening - Deluxe Edition Upgrade",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202609/0411/6e10133000131c58c0c152f126ccd96c96d2bd78d9d6bcf8.png",
       "originalPrice": 28985,
       "salePrice": 20286,
       "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP7789-PPSA09030_00-5648706170853559"
-    },
-    {
-      "id": "ps-UP7236-PPSA16109_00-DREADXPTMASIEA00",
-      "title": "The Mortuary Assistant",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/0221/49f4f6d2b3f9f62529a6b7651f44882cdc0809536e5b80fd.png",
-      "originalPrice": 36236,
-      "salePrice": 25360,
-      "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP7236-PPSA16109_00-DREADXPTMASIEA00"
-    },
-    {
-      "id": "ps-UP0700-PPSA27501_00-OPPW4CHARAPASS03",
-      "title": "ONE PIECE: PIRATE WARRIORS 4 Character Pass 3",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/0600/4466f6c16a44a99c606fd82dd44854dc62bc3038c7843157.png",
-      "originalPrice": 43486,
-      "salePrice": 30435,
-      "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA27501_00-OPPW4CHARAPASS03"
+      "dealUrl": "https://store.playstation.com/en-us/product/EP1833-PPSA02391_00-DELUXEEDITIONUPG"
     },
     {
       "id": "ps-EP0771-PPSA28769_00-CAIRNGAMESTNOV25",
@@ -2612,24 +2672,34 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/EP0771-PPSA28769_00-CAIRNGAMESTNOV25"
     },
     {
-      "id": "ps-UP7455-PPSA27997_00-0030004984351538",
-      "title": "Sledders",
+      "id": "ps-UB1599-PPSA29140_00-LEGOPARTYSIEA000",
+      "title": "LEGO® Party!",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2609/9995749f4e4ce8076ff2dccdbd771f55e09c9c1bb95ebbf5.png",
-      "originalPrice": 50736,
-      "salePrice": 35511,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/0821/ade7404425c20a8c9dfddb1f6fec66f3fa1596046a450efa.png",
+      "originalPrice": 57986,
+      "salePrice": 40586,
       "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP7455-PPSA27997_00-0030004984351538"
+      "dealUrl": "https://store.playstation.com/en-us/product/UB1599-PPSA29140_00-LEGOPARTYSIEA000"
     },
     {
-      "id": "ps-HP7254-PPSA28640_00-0367265685514349",
-      "title": "My Friendly Neighborhood",
+      "id": "ps-UP0082-PPSA32193_00-MILLENNIUMTALEUP",
+      "title": "The Adventures of Elliot: The Millennium Tales",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/0916/79b69d7162539fbf74723cee35aa52bc5197c2e673425792.png",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/1912/9cddb60efc374d029ced0e159d1db065b48b79e0fc63a704.png",
+      "originalPrice": 86986,
+      "salePrice": 60886,
+      "discountRate": 30,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0082-PPSA32193_00-MILLENNIUMTALEUP"
+    },
+    {
+      "id": "ps-UP0700-PPSA27501_00-OPPW4CHARAPASS03",
+      "title": "ONE PIECE: PIRATE WARRIORS 4 Character Pass 3",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/0600/4466f6c16a44a99c606fd82dd44854dc62bc3038c7843157.png",
       "originalPrice": 43486,
       "salePrice": 30435,
       "discountRate": 30,
-      "dealUrl": "https://store.playstation.com/en-us/product/HP7254-PPSA28640_00-0367265685514349"
+      "dealUrl": "https://store.playstation.com/en-us/product/UP0700-PPSA27501_00-OPPW4CHARAPASS03"
     },
     {
       "id": "ps-UP3501-CUSA08661_00-THGAMEFEEDERPACK",
@@ -2640,6 +2710,16 @@ export const consoleDealSnapshot: {
       "salePrice": 7090,
       "discountRate": 30,
       "dealUrl": "https://store.playstation.com/en-us/product/UP3501-CUSA08661_00-THGAMEFEEDERPACK"
+    },
+    {
+      "id": "ps-UP7236-PPSA16109_00-DREADXPTMASIEA00",
+      "title": "The Mortuary Assistant",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/0221/49f4f6d2b3f9f62529a6b7651f44882cdc0809536e5b80fd.png",
+      "originalPrice": 36236,
+      "salePrice": 25360,
+      "discountRate": 30,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP7236-PPSA16109_00-DREADXPTMASIEA00"
     },
     {
       "id": "ps-UP9000-PPSA03671_00-WOLVERINEDELUXE0",
@@ -2670,26 +2750,6 @@ export const consoleDealSnapshot: {
       "salePrice": 86986,
       "discountRate": 25,
       "dealUrl": "https://store.playstation.com/en-us/product/UP1456-PPSA37433_00-NASCAR26GOLDEDIT"
-    },
-    {
-      "id": "ps-UB1599-PPSA29343_00-AIBOUSIEA0000000",
-      "title": "Beast of Reincarnation",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2622/90ec8c84dd460708d922d6693ef8c61b3b0443db0b636b23.png",
-      "originalPrice": 86986,
-      "salePrice": 65236,
-      "discountRate": 25,
-      "dealUrl": "https://store.playstation.com/en-us/product/UB1599-PPSA29343_00-AIBOUSIEA0000000"
-    },
-    {
-      "id": "ps-UB1599-PPSA29343_00-DELBUNDLESIEA000",
-      "title": "Beast of Reincarnation Digital Deluxe Edition",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2203/f4849507d9601e905212fa294853ca1fe630b509c94a222b.png",
-      "originalPrice": 101485,
-      "salePrice": 76111,
-      "discountRate": 25,
-      "dealUrl": "https://store.playstation.com/en-us/product/UB1599-PPSA29343_00-DELBUNDLESIEA000"
     },
     {
       "id": "ps-EP3495-PPSA34008_00-0114153686334597",
@@ -2742,26 +2802,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/EP1470-PPSA29629_00-MARVELADOTEMUPS5"
     },
     {
-      "id": "ps-UP2470-PPSA29453_00-MIXTAPE000000000",
-      "title": "Mixtape",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2012/e4c9f69e0eb116cc4cb8e804e5033da3f3c1e7800104bd12.png",
-      "originalPrice": 28985,
-      "salePrice": 21736,
-      "discountRate": 25,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP2470-PPSA29453_00-MIXTAPE000000000"
-    },
-    {
-      "id": "ps-JP0106-PPSA15972_00-DWORIGINSADDDLC1",
-      "title": "DYNASTY WARRIORS: ORIGINS Visions of Four Heroes",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/2107/dd4c26170830d50fb249a758a16c6b926bf416d9e6c3a0b9.png",
-      "originalPrice": 50736,
-      "salePrice": 38048,
-      "discountRate": 25,
-      "dealUrl": "https://store.playstation.com/en-us/product/JP0106-PPSA15972_00-DWORIGINSADDDLC1"
-    },
-    {
       "id": "ps-UB1027-PPSA25041_00-0129055730840630",
       "title": "I Am Cat",
       "platform": "PlayStation",
@@ -2772,24 +2812,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UB1027-PPSA25041_00-0129055730840630"
     },
     {
-      "id": "ps-EP4638-PPSA33862_00-0507321001343377",
-      "title": "Voidtrain - Deluxe Edition",
+      "id": "ps-JP0106-PPSA15972_00-DWORIGINSADDDLC1",
+      "title": "DYNASTY WARRIORS: ORIGINS Visions of Four Heroes",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0216/2d088d47d67cfcdd149a77bf57da889f24eb5eda91849e09.png",
-      "originalPrice": 52186,
-      "salePrice": 39136,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/2107/dd4c26170830d50fb249a758a16c6b926bf416d9e6c3a0b9.png",
+      "originalPrice": 50736,
+      "salePrice": 38048,
       "discountRate": 25,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP4638-PPSA33862_00-0507321001343377"
-    },
-    {
-      "id": "ps-EP4638-PPSA33862_00-0355584296320741",
-      "title": "Voidtrain",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/2719/2e8b1af20f60228722a8eb34ed13e626240b140105e07c44.png",
-      "originalPrice": 43486,
-      "salePrice": 32610,
-      "discountRate": 25,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP4638-PPSA33862_00-0355584296320741"
+      "dealUrl": "https://store.playstation.com/en-us/product/JP0106-PPSA15972_00-DWORIGINSADDDLC1"
     },
     {
       "id": "ps-EP0700-PPSA28000_00-DAWNWALKER000DLX",
@@ -2812,16 +2842,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/EP5291-PPSA34547_00-0993602042148218"
     },
     {
-      "id": "ps-EP4837-PPSA28824_00-0VALHEIMBASEGAME",
-      "title": "Valheim",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1907/8ab5523289d5a56fd58daf51637fab4eb130e2d32a38dab1.png",
-      "originalPrice": 43486,
-      "salePrice": 34786,
-      "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP4837-PPSA28824_00-0VALHEIMBASEGAME"
-    },
-    {
       "id": "ps-JP0101-PPSA33286_00-TOWNFALLSIEJ0000",
       "title": "SILENT HILL: Townfall",
       "platform": "PlayStation",
@@ -2832,14 +2852,14 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/JP0101-PPSA33286_00-TOWNFALLSIEJ0000"
     },
     {
-      "id": "ps-HB2212-PPSA35396_00-0436554762722435",
-      "title": "The Planet Crafter Deluxe Bundle",
+      "id": "ps-EP4837-PPSA28824_00-0VALHEIMBASEGAME",
+      "title": "Valheim",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0408/c8c1956f1d377e64165226e1f8b9c9cae0f56b075dd6c5c0.png",
-      "originalPrice": 55086,
-      "salePrice": 44066,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1907/8ab5523289d5a56fd58daf51637fab4eb130e2d32a38dab1.png",
+      "originalPrice": 43486,
+      "salePrice": 34786,
       "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/HB2212-PPSA35396_00-0436554762722435"
+      "dealUrl": "https://store.playstation.com/en-us/product/EP4837-PPSA28824_00-0VALHEIMBASEGAME"
     },
     {
       "id": "ps-UP0102-PPSA02530_00-PRAGMATADX000000",
@@ -2852,46 +2872,6 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP0102-PPSA02530_00-PRAGMATADX000000"
     },
     {
-      "id": "ps-JP0700-PPSA22969_00-SAOVEULTEDITION0",
-      "title": "Echoes of Aincrad Ultimate Edition",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/1907/c11c878108b09f7d7c7b02137ff4420fbcbb591868be7276.png",
-      "originalPrice": 159486,
-      "salePrice": 127585,
-      "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/JP0700-PPSA22969_00-SAOVEULTEDITION0"
-    },
-    {
-      "id": "ps-UP3643-PPSA06464_00-0299161559093802",
-      "title": "Cult of the Lamb - Woolhaven",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202512/1123/828eed8a7b675f847901ae7ff52c716597536881500d0f62.png",
-      "originalPrice": 24635,
-      "salePrice": 19706,
-      "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP3643-PPSA06464_00-0299161559093802"
-    },
-    {
-      "id": "ps-UP1468-PPSA04136_00-MB2BANNERLORDWS0",
-      "title": "Mount & Blade II: Bannerlord - War Sails",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202503/1312/10573c39803b030fcd2278f41850c6f885621a89e8265f18.png",
-      "originalPrice": 36236,
-      "salePrice": 28985,
-      "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP1468-PPSA04136_00-MB2BANNERLORDWS0"
-    },
-    {
-      "id": "ps-HB2212-PPSA35396_00-0596873862006390",
-      "title": "The Planet Crafter",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/2609/30eb06a7d6a877825b9bf46a53f3410a9025b709ed21ee7e.png",
-      "originalPrice": 34786,
-      "salePrice": 27826,
-      "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/HB2212-PPSA35396_00-0596873862006390"
-    },
-    {
       "id": "ps-HP7386-PPSA27158_00-0022337374597692",
       "title": "Dispatch",
       "platform": "PlayStation",
@@ -2900,26 +2880,6 @@ export const consoleDealSnapshot: {
       "salePrice": 34786,
       "discountRate": 20,
       "dealUrl": "https://store.playstation.com/en-us/product/HP7386-PPSA27158_00-0022337374597692"
-    },
-    {
-      "id": "ps-UP2139-PPSA37764_00-0137402811452376",
-      "title": "The Jackbox Party Pack 12",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1021/cdf5c22bf2228d1a013366223f02588afc65482681da0343.png",
-      "originalPrice": 43486,
-      "salePrice": 34786,
-      "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP2139-PPSA37764_00-0137402811452376"
-    },
-    {
-      "id": "ps-EP1833-PPSA02391_00-0221258190394872",
-      "title": "Dune: Awakening - Filmic Archive DLC",
-      "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2413/0d908c9010426ae44a544631b8a43170795b607a229cd87e.png",
-      "originalPrice": 14486,
-      "salePrice": 11586,
-      "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/EP1833-PPSA02391_00-0221258190394872"
     },
     {
       "id": "ps-UP8634-PPSA23300_00-0097358964792948",
@@ -2932,14 +2892,94 @@ export const consoleDealSnapshot: {
       "dealUrl": "https://store.playstation.com/en-us/product/UP8634-PPSA23300_00-0097358964792948"
     },
     {
-      "id": "ps-UP4139-PPSA07434_00-AOW4EXPANSIONPA2",
-      "title": "Age of Wonders 4: Expansion Pass 2",
+      "id": "ps-HB2212-PPSA35396_00-0436554762722435",
+      "title": "The Planet Crafter Deluxe Bundle",
       "platform": "PlayStation",
-      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202409/1809/54c2d6eb41f7cf8db0d9fb449aec6a0f1784c33f4619b2c1.png",
-      "originalPrice": 72486,
-      "salePrice": 57986,
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0408/c8c1956f1d377e64165226e1f8b9c9cae0f56b075dd6c5c0.png",
+      "originalPrice": 55086,
+      "salePrice": 44066,
       "discountRate": 20,
-      "dealUrl": "https://store.playstation.com/en-us/product/UP4139-PPSA07434_00-AOW4EXPANSIONPA2"
+      "dealUrl": "https://store.playstation.com/en-us/product/HB2212-PPSA35396_00-0436554762722435"
+    },
+    {
+      "id": "ps-UP1468-PPSA04136_00-MB2BANNERLORDWS0",
+      "title": "Mount & Blade II: Bannerlord - War Sails",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202503/1312/10573c39803b030fcd2278f41850c6f885621a89e8265f18.png",
+      "originalPrice": 36236,
+      "salePrice": 28985,
+      "discountRate": 20,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP1468-PPSA04136_00-MB2BANNERLORDWS0"
+    },
+    {
+      "id": "ps-UP2139-PPSA37764_00-0137402811452376",
+      "title": "The Jackbox Party Pack 12",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1021/cdf5c22bf2228d1a013366223f02588afc65482681da0343.png",
+      "originalPrice": 43486,
+      "salePrice": 34786,
+      "discountRate": 20,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP2139-PPSA37764_00-0137402811452376"
+    },
+    {
+      "id": "ps-UP3643-PPSA06464_00-0299161559093802",
+      "title": "Cult of the Lamb - Woolhaven",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202512/1123/828eed8a7b675f847901ae7ff52c716597536881500d0f62.png",
+      "originalPrice": 24635,
+      "salePrice": 19706,
+      "discountRate": 20,
+      "dealUrl": "https://store.playstation.com/en-us/product/UP3643-PPSA06464_00-0299161559093802"
+    },
+    {
+      "id": "ps-JP0700-PPSA22969_00-SAOVEULTEDITION0",
+      "title": "Echoes of Aincrad Ultimate Edition",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/1907/c11c878108b09f7d7c7b02137ff4420fbcbb591868be7276.png",
+      "originalPrice": 159486,
+      "salePrice": 127585,
+      "discountRate": 20,
+      "dealUrl": "https://store.playstation.com/en-us/product/JP0700-PPSA22969_00-SAOVEULTEDITION0"
+    },
+    {
+      "id": "ps-EB1722-PPSA29789_00-0450913655011817",
+      "title": "Content Warning",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/0509/997ed9ad0781e7c101db49bd6273b003a6b93ac4ef7e2f23.png",
+      "originalPrice": 14486,
+      "salePrice": 11586,
+      "discountRate": 20,
+      "dealUrl": "https://store.playstation.com/en-us/product/EB1722-PPSA29789_00-0450913655011817"
+    },
+    {
+      "id": "ps-EP1833-PPSA02391_00-0221258190394872",
+      "title": "Dune: Awakening - Filmic Archive DLC",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2413/0d908c9010426ae44a544631b8a43170795b607a229cd87e.png",
+      "originalPrice": 14486,
+      "salePrice": 11586,
+      "discountRate": 20,
+      "dealUrl": "https://store.playstation.com/en-us/product/EP1833-PPSA02391_00-0221258190394872"
+    },
+    {
+      "id": "ps-HB2212-PPSA35396_00-0596873862006390",
+      "title": "The Planet Crafter",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/2609/30eb06a7d6a877825b9bf46a53f3410a9025b709ed21ee7e.png",
+      "originalPrice": 34786,
+      "salePrice": 27826,
+      "discountRate": 20,
+      "dealUrl": "https://store.playstation.com/en-us/product/HB2212-PPSA35396_00-0596873862006390"
+    },
+    {
+      "id": "ps-HP7386-PPSA27158_00-0567897799992899",
+      "title": "Dispatch: Digital Deluxe Edition",
+      "platform": "PlayStation",
+      "thumbnailUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1523/88879dbcec7ff29baedd9ae080612031db4956cac4c49e48.png",
+      "originalPrice": 57986,
+      "salePrice": 46386,
+      "discountRate": 20,
+      "dealUrl": "https://store.playstation.com/en-us/product/HP7386-PPSA27158_00-0567897799992899"
     }
   ],
   "xbox": [
