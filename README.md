@@ -3,7 +3,7 @@
 Steam·Epic·Xbox·PlayStation·Nintendo Switch 할인 게임을 한 목록으로 모아 보여주는 서비스입니다. 토스 앱인토스(Apps in Toss) 미니앱으로 먼저 출시했고, 토스 밖에서도 쓸 수 있도록 할인 게임 검색 웹사이트로 확장해 함께 운영하고 있습니다. 개인 프로젝트로 기획부터 배포까지 혼자 진행했습니다.
 
 - **웹사이트**: https://gamsale.vercel.app
-- **토스 미니앱**: 토스 앱 안에서만 열립니다 (`game-deal-alert`, 버전 1.0.4, 앱인토스 SDK 3.6). 출시 1개월 오가닉 누적 이용자 250명 이상
+- **토스 미니앱**: 토스 앱 안에서만 열립니다 (`gamsale`, 버전 1.0.4, 앱인토스 SDK 3.6). 출시 1개월 오가닉 누적 이용자 250명 이상
 
 ![겜세일 웹사이트 홈](docs/screens/web-home.jpg)
 
@@ -87,7 +87,7 @@ npm run dev:web      # 웹사이트 http://localhost:5174
 npm test             # Vitest
 npm run lint
 npm run typecheck
-npm run build        # prebuild(스냅샷 갱신) → vite build → ait build → game-deal-alert.ait
+npm run build        # prebuild(스냅샷 갱신) → vite build → ait build → gamsale.ait
 npm run build:web    # 웹사이트 → dist-web/
 npx vercel deploy --prod
 ```
